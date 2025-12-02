@@ -24,10 +24,8 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
         <div className="container flex h-20 items-center justify-between">
           <Link href="/">
-            <div className="flex items-center gap-2 cursor-pointer">
-              <div className="h-10 w-10 bg-chart-1 rounded-lg flex items-center justify-center text-white font-bold font-sans text-xl shadow-lg">
-                NCA
-              </div>
+            <div className="flex items-center gap-3 cursor-pointer">
+              <img src="/images/logo.png" alt="NCA Logo" className="h-12 w-auto object-contain" />
               <div className="flex flex-col">
                 <span className="font-sans font-bold text-lg leading-none text-primary">National Credit</span>
                 <span className="font-sans text-sm text-muted-foreground leading-none">Adviser</span>
@@ -99,10 +97,8 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       <footer className="bg-primary text-primary-foreground py-12 border-t border-white/10">
         <div className="container grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="space-y-4">
-            <div className="flex items-center gap-2">
-              <div className="h-8 w-8 bg-chart-1 rounded flex items-center justify-center text-white font-bold font-sans">
-                NCA
-              </div>
+            <div className="flex items-center gap-3">
+              <img src="/images/logo.png" alt="NCA Logo" className="h-10 w-auto object-contain bg-white/90 rounded-sm p-0.5" />
               <span className="font-sans font-bold text-lg">National Credit Adviser</span>
             </div>
             <p className="text-sm text-primary-foreground/80 leading-relaxed">
