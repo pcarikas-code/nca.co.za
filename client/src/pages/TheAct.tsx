@@ -5,6 +5,7 @@ import { BookOpen, FileText, Scale, Shield, ExternalLink, AlertTriangle, Users, 
 import GoogleAd from "@/components/GoogleAd";
 import SEOHead from "@/components/SEOHead";
 import { Link } from "wouter";
+import GlossaryTerm from "@/components/GlossaryTerm";
 
 export default function TheAct() {
   const scrollToSection = (id: string) => {
@@ -102,7 +103,7 @@ export default function TheAct() {
             </div>
             <div className="prose prose-lg text-muted-foreground max-w-none">
               <p>
-                The National Credit Act (NCA) was signed into law to address the imbalances in the credit market. It aims to protect consumers from unfair credit practices and to promote a sustainable credit market in South Africa.
+                The <GlossaryTerm term="National Credit Act" /> (NCA) was signed into law to address the imbalances in the credit market. It aims to protect consumers from unfair credit practices and to promote a sustainable credit market in South Africa.
               </p>
               
               <div className="bg-secondary/30 border-l-4 border-chart-1 p-4 my-6 not-prose">
@@ -117,7 +118,7 @@ export default function TheAct() {
               <ul className="list-disc pl-6 space-y-2">
                 <li>Promote and advance the social and economic welfare of South Africans.</li>
                 <li>Promote a fair, transparent, competitive, sustainable, responsible, efficient, effective and accessible credit market.</li>
-                <li>Protect consumers from reckless credit granting and over-indebtedness.</li>
+                <li>Protect consumers from <GlossaryTerm term="Reckless Lending" /> and <GlossaryTerm term="Over-indebtedness" />.</li>
                 <li>Provide for debt re-organisation in cases of over-indebtedness.</li>
               </ul>
             </div>
@@ -138,7 +139,7 @@ export default function TheAct() {
                 </CardHeader>
                 <CardContent>
                   <p className="text-sm text-muted-foreground">
-                    Introduced "debt intervention" measures to assist low-income consumers, strengthened affordability assessment regulations, and clarified reckless lending definitions.
+                    Introduced "debt intervention" measures to assist low-income consumers, strengthened <GlossaryTerm term="Affordability Assessment" /> regulations, and clarified reckless lending definitions.
                   </p>
                 </CardContent>
               </Card>
@@ -158,7 +159,7 @@ export default function TheAct() {
                 </CardHeader>
                 <CardContent>
                   <p className="text-sm text-muted-foreground">
-                    Established the "Twin Peaks" model of financial regulation, impacting how credit providers are supervised for market conduct.
+                    Established the "Twin Peaks" model of financial regulation, impacting how <GlossaryTerm term="Credit Provider">credit providers</GlossaryTerm> are supervised for market conduct.
                   </p>
                 </CardContent>
               </Card>
@@ -168,7 +169,7 @@ export default function TheAct() {
                 </CardHeader>
                 <CardContent>
                   <p className="text-sm text-muted-foreground">
-                    Amended the NCA to ensure the protection of personal information held by credit bureaus and credit providers.
+                    Amended the NCA to ensure the protection of personal information held by <GlossaryTerm term="Credit Bureau">credit bureaus</GlossaryTerm> and credit providers.
                   </p>
                 </CardContent>
               </Card>
@@ -229,12 +230,12 @@ export default function TheAct() {
               <h2 className="text-3xl font-bold font-sans text-primary">Credit Provider Obligations</h2>
             </div>
             <div className="prose prose-lg text-muted-foreground max-w-none">
-              <p>Credit providers must register with the National Credit Regulator and adhere to strict guidelines, including:</p>
+              <p><GlossaryTerm term="Credit Provider">Credit providers</GlossaryTerm> must register with the <GlossaryTerm term="National Credit Regulator" /> and adhere to strict guidelines, including:</p>
               <ul className="list-disc pl-6 space-y-2">
-                <li>Conducting thorough affordability assessments before granting credit.</li>
+                <li>Conducting thorough <GlossaryTerm term="Affordability Assessment">affordability assessments</GlossaryTerm> before granting credit.</li>
                 <li>Providing clear and understandable pre-agreement statements and quotations.</li>
                 <li>Ensuring marketing practices are not misleading or deceptive.</li>
-                <li>Reporting accurate consumer credit information to credit bureaus.</li>
+                <li>Reporting accurate consumer credit information to <GlossaryTerm term="Credit Bureau">credit bureaus</GlossaryTerm>.</li>
               </ul>
             </div>
           </section>
@@ -256,7 +257,7 @@ export default function TheAct() {
                 <ul className="space-y-3 text-muted-foreground">
                   <li className="flex gap-3">
                     <span className="text-chart-5 font-bold">•</span>
-                    The credit provider failed to conduct an affordability assessment.
+                    The credit provider failed to conduct an <GlossaryTerm term="Affordability Assessment" />.
                   </li>
                   <li className="flex gap-3">
                     <span className="text-chart-5 font-bold">•</span>
@@ -286,7 +287,7 @@ export default function TheAct() {
             </div>
             <div className="prose prose-lg text-muted-foreground max-w-none">
               <p>
-                A consumer is over-indebted if the preponderance of available information indicates that the consumer is or will be unable to satisfy in a timely manner all the obligations under all the credit agreements to which the consumer is a party.
+                A consumer is <GlossaryTerm term="Over-indebtedness">over-indebted</GlossaryTerm> if the preponderance of available information indicates that the consumer is or will be unable to satisfy in a timely manner all the obligations under all the credit agreements to which the consumer is a party.
               </p>
               <p>
                 When determining over-indebtedness, a debt counsellor must consider the consumer's:
@@ -308,7 +309,7 @@ export default function TheAct() {
             </div>
             <div className="prose prose-lg text-muted-foreground max-w-none">
               <p>
-                Debt counselling is a formal debt restructuring process for over-indebted consumers. A registered debt counsellor assesses the consumer's financial situation and, if they are found to be over-indebted, proposes a restructuring plan to the Magistrate's Court.
+                <GlossaryTerm term="Debt Counselling" /> is a formal debt restructuring process for over-indebted consumers. A registered debt counsellor assesses the consumer's financial situation and, if they are found to be over-indebted, proposes a restructuring plan to the Magistrate's Court.
               </p>
               <p>
                 <strong>Benefits of Debt Counselling:</strong>
@@ -336,8 +337,8 @@ export default function TheAct() {
               </p>
               <ul className="list-disc pl-6 space-y-2">
                 <li><strong>Alternative Dispute Resolution (ADR):</strong> Mediation or conciliation through an ombud or ADR agent.</li>
-                <li><strong>National Credit Regulator (NCR):</strong> Filing a complaint with the NCR for investigation.</li>
-                <li><strong>National Consumer Tribunal (NCT):</strong> Adjudication of disputes and enforcement of the Act.</li>
+                <li><strong><GlossaryTerm term="National Credit Regulator" /> (NCR):</strong> Filing a complaint with the NCR for investigation.</li>
+                <li><strong><GlossaryTerm term="National Consumer Tribunal" /> (NCT):</strong> Adjudication of disputes and enforcement of the Act.</li>
               </ul>
             </div>
           </section>
@@ -352,7 +353,7 @@ export default function TheAct() {
             </div>
             <div className="prose prose-lg text-muted-foreground max-w-none">
               <p>
-                The NCR is the primary regulator responsible for enforcing the National Credit Act. Its functions include:
+                The <GlossaryTerm term="National Credit Regulator" /> is the primary regulator responsible for enforcing the National Credit Act. Its functions include:
               </p>
               <ul className="list-disc pl-6 space-y-2">
                 <li>Registering credit providers, credit bureaus, and debt counsellors.</li>
@@ -373,7 +374,7 @@ export default function TheAct() {
             </div>
             <div className="prose prose-lg text-muted-foreground max-w-none">
               <p>
-                The NCT is an independent adjudicative body with jurisdiction throughout South Africa. It hears cases regarding:
+                The <GlossaryTerm term="National Consumer Tribunal" /> is an independent adjudicative body with jurisdiction throughout South Africa. It hears cases regarding:
               </p>
               <ul className="list-disc pl-6 space-y-2">
                 <li>Alleged prohibited conduct by credit providers.</li>
