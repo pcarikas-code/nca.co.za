@@ -1,10 +1,11 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { MapPin, Phone, Star, UserCheck } from "lucide-react";
-import { useState, useMemo } from "react";
+import { MapPin, Phone, Star, UserCheck, ChevronLeft, ChevronRight, Mail } from "lucide-react";
+import { useState, useMemo, useEffect } from "react";
 import GoogleAd from "@/components/GoogleAd";
 import SEOHead from "@/components/SEOHead";
+import ProtectedContact from "@/components/ProtectedContact";
 import counsellorsData from "@/data/counsellors.json";
 
 // Use real data
@@ -16,6 +17,13 @@ const provinces = Array.from(new Set(counsellors.map(c => c.province).filter(p =
 export default function DebtCounsellors() {
   const [selectedProvince, setSelectedProvince] = useState<string>("");
   const [selectedCity, setSelectedCity] = useState<string>("");
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 12;
+
+  // Reset page when filters change
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [selectedProvince, selectedCity]);
 
   // Filter cities based on selected province
   const availableCities = useMemo(() => {
@@ -35,6 +43,13 @@ export default function DebtCounsellors() {
       return true;
     });
   }, [selectedProvince, selectedCity]);
+
+  // Pagination logic
+  const totalPages = Math.ceil(filteredCounsellors.length / itemsPerPage);
+  const currentCounsellors = filteredCounsellors.slice(
+    (currentPage - 1) * itemsPerPage,
+    currentPage * itemsPerPage
+  );
 
   const handleProvinceChange = (value: string) => {
     setSelectedProvince(value);
@@ -114,49 +129,107 @@ export default function DebtCounsellors() {
         </div>
 
         {filteredCounsellors.length > 0 ? (
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {filteredCounsellors.map((counsellor) => (
-              <Card key={counsellor.id} className="border border-border hover:border-chart-1/50 transition-all hover:shadow-lg group bg-white">
-                <CardContent className="p-6">
-                  <div className="flex justify-between items-start mb-4">
-                    <div className="h-12 w-12 rounded-full bg-secondary flex items-center justify-center text-primary font-bold text-lg">
-                      {counsellor.name.charAt(0)}
-                    </div>
-                    {counsellor.verified && (
-                      <div className="flex items-center gap-1 text-xs font-bold text-chart-3 bg-chart-3/10 px-2 py-1 rounded-full">
-                        <UserCheck className="h-3 w-3" /> Verified
+          <>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+              {currentCounsellors.map((counsellor) => (
+                <Card key={counsellor.id} className="border border-border hover:border-chart-1/50 transition-all hover:shadow-lg group bg-white flex flex-col">
+                  <CardContent className="p-6 flex-1 flex flex-col">
+                    <div className="flex justify-between items-start mb-4">
+                      <div className="h-12 w-12 rounded-full bg-secondary flex items-center justify-center text-primary font-bold text-lg">
+                        {counsellor.name.charAt(0)}
                       </div>
-                    )}
-                  </div>
-                  
-                  <h3 className="font-sans font-bold text-xl text-primary mb-1 group-hover:text-chart-1 transition-colors">
-                    {counsellor.name}
-                  </h3>
-                  <p className="text-sm text-muted-foreground font-medium mb-4">{counsellor.company}</p>
-                  
-                  <div className="space-y-2 text-sm text-muted-foreground mb-6">
-                    <div className="flex items-center gap-2">
-                      <MapPin className="h-4 w-4 text-chart-1 flex-shrink-0" />
-                      <span className="truncate">{counsellor.address || `${counsellor.city}, ${counsellor.province}`}</span>
+                      {counsellor.verified && (
+                        <div className="flex items-center gap-1 text-xs font-bold text-chart-3 bg-chart-3/10 px-2 py-1 rounded-full">
+                          <UserCheck className="h-3 w-3" /> Verified
+                        </div>
+                      )}
                     </div>
-                    <div className="flex items-center gap-2">
-                      <Phone className="h-4 w-4 text-chart-1 flex-shrink-0" />
-                      {counsellor.phone}
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <div className="text-xs bg-secondary px-2 py-0.5 rounded text-primary/70">
-                        NCR: {counsellor.ncr_number}
+                    
+                    <h3 className="font-sans font-bold text-xl text-primary mb-1 group-hover:text-chart-1 transition-colors">
+                      {counsellor.name}
+                    </h3>
+                    <p className="text-sm text-muted-foreground font-medium mb-4">{counsellor.company}</p>
+                    
+                    <div className="space-y-3 text-sm text-muted-foreground mb-6 flex-1">
+                      <div className="flex items-start gap-2">
+                        <MapPin className="h-4 w-4 text-chart-1 flex-shrink-0 mt-0.5" />
+                        <span className="line-clamp-2">{counsellor.address || `${counsellor.city}, ${counsellor.province}`}</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <Phone className="h-4 w-4 text-chart-1 flex-shrink-0" />
+                        <ProtectedContact value={counsellor.phone} type="phone" />
+                      </div>
+                      {counsellor.email && (
+                        <div className="flex items-center gap-2">
+                          <Mail className="h-4 w-4 text-chart-1 flex-shrink-0" />
+                          <ProtectedContact value={counsellor.email} type="email" />
+                        </div>
+                      )}
+                      <div className="pt-2">
+                        <div className="inline-block text-xs bg-secondary px-2 py-0.5 rounded text-primary/70">
+                          NCR: {counsellor.ncr_number}
+                        </div>
                       </div>
                     </div>
-                  </div>
 
-                  <Button className="w-full bg-primary text-primary-foreground hover:bg-primary/90 font-sans">
-                    Contact Counsellor
-                  </Button>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
+                    <Button className="w-full bg-primary text-primary-foreground hover:bg-primary/90 font-sans mt-auto">
+                      Contact Counsellor
+                    </Button>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+
+            {/* Pagination Controls */}
+            {totalPages > 1 && (
+              <div className="flex justify-center items-center gap-2 mt-8">
+                <Button
+                  variant="outline"
+                  size="icon"
+                  onClick={() => setCurrentPage(p => Math.max(1, p - 1))}
+                  disabled={currentPage === 1}
+                >
+                  <ChevronLeft className="h-4 w-4" />
+                </Button>
+                
+                <div className="flex items-center gap-1 mx-2">
+                  {Array.from({ length: Math.min(5, totalPages) }, (_, i) => {
+                    // Logic to show window of pages around current
+                    let pageNum = i + 1;
+                    if (totalPages > 5) {
+                      if (currentPage > 3) {
+                        pageNum = currentPage - 2 + i;
+                      }
+                      if (pageNum > totalPages) {
+                        pageNum = totalPages - 4 + i;
+                      }
+                    }
+                    
+                    return (
+                      <Button
+                        key={pageNum}
+                        variant={currentPage === pageNum ? "default" : "ghost"}
+                        size="sm"
+                        className={`w-8 h-8 p-0 ${currentPage === pageNum ? "bg-chart-1 hover:bg-chart-1/90" : ""}`}
+                        onClick={() => setCurrentPage(pageNum)}
+                      >
+                        {pageNum}
+                      </Button>
+                    );
+                  })}
+                </div>
+
+                <Button
+                  variant="outline"
+                  size="icon"
+                  onClick={() => setCurrentPage(p => Math.min(totalPages, p + 1))}
+                  disabled={currentPage === totalPages}
+                >
+                  <ChevronRight className="h-4 w-4" />
+                </Button>
+              </div>
+            )}
+          </>
         ) : (
           <div className="text-center py-20 bg-secondary/20 rounded-xl">
             <p className="text-xl text-muted-foreground">No counsellors found in this location.</p>
