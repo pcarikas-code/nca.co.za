@@ -3,6 +3,13 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { MapPin, Phone, Star, UserCheck, ChevronLeft, ChevronRight, Mail } from "lucide-react";
 import { useState, useMemo, useEffect } from "react";
+
+// Extend window interface for Google Analytics
+declare global {
+  interface Window {
+    gtag: (command: string, action: string, params?: any) => void;
+  }
+}
 import GoogleAd from "@/components/GoogleAd";
 import SEOHead from "@/components/SEOHead";
 import ProtectedContact from "@/components/ProtectedContact";
@@ -175,6 +182,15 @@ export default function DebtCounsellors() {
                     <Button 
                       className="w-full bg-primary text-primary-foreground hover:bg-primary/90 font-sans mt-auto text-sm md:text-base py-2 md:py-2.5 h-auto"
                       onClick={() => {
+                        // Track click event
+                        if (typeof window.gtag === 'function') {
+                          window.gtag('event', 'contact_counsellor', {
+                            'event_category': 'engagement',
+                            'event_label': counsellor.name,
+                            'contact_method': counsellor.email ? 'email' : 'phone'
+                          });
+                        }
+
                         if (counsellor.email) {
                           window.location.href = `mailto:${counsellor.email}?subject=Enquiry via National Credit Adviser`;
                         } else if (counsellor.phone) {

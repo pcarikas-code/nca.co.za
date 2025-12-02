@@ -41,6 +41,12 @@ export default function SEOHead({
       {/* Additional SEO tags */}
       <meta name="robots" content="index, follow" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      
+      {/* Local SEO for South Africa */}
+      <meta name="geo.region" content="ZA" />
+      <meta name="geo.placename" content="South Africa" />
+      <meta name="geo.position" content="-30.5595;22.9375" />
+      <meta name="ICBM" content="-30.5595, 22.9375" />
     </Helmet>
   );
 }
