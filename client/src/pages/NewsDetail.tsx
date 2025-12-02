@@ -1,6 +1,6 @@
 import { useParams, useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, Calendar, Clock, Share2 } from "lucide-react";
+import { ArrowLeft, Calendar, Clock, Share2, ExternalLink } from "lucide-react";
 import { Link } from "wouter";
 import GoogleAd from "@/components/GoogleAd";
 import SEOHead from "@/components/SEOHead";
@@ -16,6 +16,8 @@ const newsArticles = [
     date: "October 15, 2023",
     readTime: "5 min read",
     image: "/images/legal-act.png",
+    source: "National Credit Regulator (NCR)",
+    sourceUrl: "https://www.ncr.org.za",
     content: `
       <p class="mb-4">The National Credit Amendment Act represents a significant shift in how consumer debt is managed in South Africa. This legislation introduces new measures to assist over-indebted consumers, particularly those in lower income brackets.</p>
       
@@ -41,6 +43,8 @@ const newsArticles = [
     date: "November 2, 2023",
     readTime: "4 min read",
     image: "/images/debt-counselling.png",
+    source: "South African Reserve Bank (SARB)",
+    sourceUrl: "https://www.resbank.co.za",
     content: `
       <p class="mb-4">With the South African Reserve Bank recently announcing another hike in the repo rate, consumers with debt linked to prime lending rates will see an increase in their monthly repayments. This includes home loans, vehicle finance, and credit cards.</p>
       
@@ -63,6 +67,8 @@ const newsArticles = [
     date: "September 28, 2023",
     readTime: "6 min read",
     image: "/images/faq-illustration.png",
+    source: "Debt Counsellors Association of South Africa (DCASA)",
+    sourceUrl: "https://www.dcasa.co.za",
     content: `
       <p class="mb-4">Debt review is a legal process introduced by the National Credit Act to help over-indebted consumers. It offers a structured way to repay debts without the threat of legal action and asset repossession.</p>
       
@@ -82,6 +88,8 @@ const newsArticles = [
     date: "December 5, 2023",
     readTime: "3 min read",
     image: "/images/news-bg.png",
+    source: "South African Banking Risk Information Centre (SABRIC)",
+    sourceUrl: "https://www.sabric.co.za",
     content: `
       <p class="mb-4">As online shopping continues to grow, so does the risk of credit card fraud. Protecting your financial information is more important than ever.</p>
       
@@ -102,6 +110,8 @@ const newsArticles = [
     date: "January 12, 2024",
     readTime: "5 min read",
     image: "/images/legal-act.png",
+    source: "Council for Debt Collectors",
+    sourceUrl: "https://www.cfdc.org.za",
     content: `
       <p class="mb-4">Debt collectors must adhere to the National Credit Act and the Debt Collectors Act. You have rights that protect you from harassment and unfair practices.</p>
       
@@ -124,6 +134,8 @@ const newsArticles = [
     date: "February 20, 2024",
     readTime: "7 min read",
     image: "/images/debt-counselling.png",
+    source: "Financial Sector Conduct Authority (FSCA)",
+    sourceUrl: "https://www.fsca.co.za",
     content: `
       <p class="mb-4">A budget is the foundation of financial health. It gives you control over your money and helps you achieve your financial goals.</p>
       
@@ -207,6 +219,24 @@ export default function NewsDetail() {
                 className="prose prose-lg max-w-none text-muted-foreground"
                 dangerouslySetInnerHTML={{ __html: article.content }}
               />
+
+              {article.source && (
+                <div className="mt-8 p-4 bg-secondary/30 rounded-lg border border-border text-sm text-muted-foreground">
+                  <span className="font-semibold mr-2">Source:</span>
+                  {article.sourceUrl ? (
+                    <a 
+                      href={article.sourceUrl} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="text-primary hover:underline inline-flex items-center gap-1"
+                    >
+                      {article.source} <ExternalLink className="h-3 w-3" />
+                    </a>
+                  ) : (
+                    <span>{article.source}</span>
+                  )}
+                </div>
+              )}
 
               <div className="mt-10 pt-6 border-t border-border flex justify-between items-center">
                 <div className="text-sm font-medium text-muted-foreground">
