@@ -7,6 +7,26 @@ import SEOHead from "@/components/SEOHead";
 import { Link } from "wouter";
 
 export default function TheAct() {
+  const scrollToSection = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+  const tocItems = [
+    { id: "purpose", label: "Purpose of the Act" },
+    { id: "amendments", label: "Key Amendments" },
+    { id: "rights", label: "Consumer Rights" },
+    { id: "reckless", label: "Reckless Lending" },
+    // { id: "obligations", label: "Credit Provider Obligations" },
+    // { id: "over-indebtedness", label: "Over-indebtedness" },
+    // { id: "counselling", label: "Debt Counselling" },
+    // { id: "dispute", label: "Dispute Resolution" },
+    // { id: "ncr", label: "National Credit Regulator" },
+    // { id: "tribunal", label: "National Consumer Tribunal" }
+  ];
+
   return (
     <div className="min-h-screen bg-background pb-20">
       <SEOHead 
@@ -39,21 +59,14 @@ export default function TheAct() {
               <CardContent className="p-0">
                 <ScrollArea className="h-[400px] px-6 pb-6">
                   <ul className="space-y-4 text-sm">
-                    {[
-                      "Purpose of the Act",
-                      "Key Amendments",
-                      "Consumer Rights",
-                      "Credit Provider Obligations",
-                      "Reckless Credit",
-                      "Over-indebtedness",
-                      "Debt Counselling",
-                      "Dispute Resolution",
-                      "National Credit Regulator",
-                      "National Consumer Tribunal"
-                    ].map((item, i) => (
-                      <li key={i} className="flex items-center gap-3 text-muted-foreground hover:text-chart-1 cursor-pointer transition-colors">
+                    {tocItems.map((item, i) => (
+                      <li 
+                        key={i} 
+                        onClick={() => scrollToSection(item.id)}
+                        className="flex items-center gap-3 text-muted-foreground hover:text-chart-1 cursor-pointer transition-colors"
+                      >
                         <span className="text-xs font-bold text-chart-1/50">0{i + 1}</span>
-                        {item}
+                        {item.label}
                       </li>
                     ))}
                   </ul>
@@ -80,7 +93,7 @@ export default function TheAct() {
           <GoogleAd slot="1122334455" className="mb-8" />
           
           {/* Section 1: Purpose */}
-          <section>
+          <section id="purpose" className="scroll-mt-24">
             <div className="flex items-center gap-4 mb-6">
               <div className="h-12 w-12 rounded-full bg-chart-1/10 flex items-center justify-center text-chart-1">
                 <Scale className="h-6 w-6" />
@@ -111,7 +124,7 @@ export default function TheAct() {
           </section>
 
           {/* Section 2: Key Amendments */}
-          <section>
+          <section id="amendments" className="scroll-mt-24">
             <div className="flex items-center gap-4 mb-6">
               <div className="h-12 w-12 rounded-full bg-chart-2/10 flex items-center justify-center text-chart-2">
                 <FileText className="h-6 w-6" />
@@ -163,7 +176,7 @@ export default function TheAct() {
           </section>
 
           {/* Section 3: Consumer Rights */}
-          <section>
+          <section id="rights" className="scroll-mt-24">
             <div className="flex items-center gap-4 mb-6">
               <div className="h-12 w-12 rounded-full bg-chart-3/10 flex items-center justify-center text-chart-3">
                 <Shield className="h-6 w-6" />
@@ -208,7 +221,7 @@ export default function TheAct() {
           </section>
 
           {/* Section 4: Reckless Lending */}
-          <section>
+          <section id="reckless" className="scroll-mt-24">
             <GoogleAd slot="5544332211" className="mb-8" />
             <div className="flex items-center gap-4 mb-6">
               <div className="h-12 w-12 rounded-full bg-chart-5/10 flex items-center justify-center text-chart-5">
