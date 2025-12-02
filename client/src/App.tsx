@@ -1,6 +1,7 @@
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
-import { Route, Switch } from "wouter";
+import { Route, Switch, Router as WouterRouter } from "wouter";
+import { useHashLocation } from "wouter/use-hash-location";
 import ErrorBoundary from "./components/ErrorBoundary";
 import Layout from "./components/Layout";
 import { ThemeProvider } from "./contexts/ThemeContext";
@@ -16,17 +17,19 @@ import NotFound from "./pages/NotFound";
 
 function Router() {
   return (
-    <Layout>
-      <Switch>
-        <Route path="/" component={Home} />
-          <Route path="/the-act" component={TheAct} />
-          <Route path="/news" component={News} />
-          <Route path="/news/:id" component={NewsDetail} />
-          <Route path="/debt-counsellors" component={DebtCounsellors} />
-        <Route path="/faq" component={FAQ} />
-        <Route component={NotFound} />
-      </Switch>
-    </Layout>
+    <WouterRouter hook={useHashLocation}>
+      <Layout>
+        <Switch>
+          <Route path="/" component={Home} />
+            <Route path="/the-act" component={TheAct} />
+            <Route path="/news" component={News} />
+            <Route path="/news/:id" component={NewsDetail} />
+            <Route path="/debt-counsellors" component={DebtCounsellors} />
+          <Route path="/faq" component={FAQ} />
+          <Route component={NotFound} />
+        </Switch>
+      </Layout>
+    </WouterRouter>
   );
 }
 
