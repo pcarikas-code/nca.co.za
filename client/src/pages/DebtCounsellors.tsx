@@ -133,46 +133,46 @@ export default function DebtCounsellors() {
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
               {currentCounsellors.map((counsellor) => (
                 <Card key={counsellor.id} className="border border-border hover:border-chart-1/50 transition-all hover:shadow-lg group bg-white flex flex-col">
-                  <CardContent className="p-6 flex-1 flex flex-col">
-                    <div className="flex justify-between items-start mb-4">
-                      <div className="h-12 w-12 rounded-full bg-secondary flex items-center justify-center text-primary font-bold text-lg">
+                  <CardContent className="p-4 md:p-6 flex-1 flex flex-col">
+                    <div className="flex justify-between items-start mb-3 md:mb-4">
+                      <div className="h-10 w-10 md:h-12 md:w-12 rounded-full bg-secondary flex items-center justify-center text-primary font-bold text-base md:text-lg">
                         {counsellor.name.charAt(0)}
                       </div>
                       {counsellor.verified && (
-                        <div className="flex items-center gap-1 text-xs font-bold text-chart-3 bg-chart-3/10 px-2 py-1 rounded-full">
+                        <div className="flex items-center gap-1 text-[10px] md:text-xs font-bold text-chart-3 bg-chart-3/10 px-2 py-1 rounded-full">
                           <UserCheck className="h-3 w-3" /> Verified
                         </div>
                       )}
                     </div>
                     
-                    <h3 className="font-sans font-bold text-xl text-primary mb-1 group-hover:text-chart-1 transition-colors">
+                    <h3 className="font-sans font-bold text-lg md:text-xl text-primary mb-1 group-hover:text-chart-1 transition-colors">
                       {counsellor.name}
                     </h3>
-                    <p className="text-sm text-muted-foreground font-medium mb-4">{counsellor.company}</p>
+                    <p className="text-xs md:text-sm text-muted-foreground font-medium mb-3 md:mb-4">{counsellor.company}</p>
                     
-                    <div className="space-y-3 text-sm text-muted-foreground mb-6 flex-1">
+                    <div className="space-y-2 md:space-y-3 text-xs md:text-sm text-muted-foreground mb-4 md:mb-6 flex-1">
                       <div className="flex items-start gap-2">
-                        <MapPin className="h-4 w-4 text-chart-1 flex-shrink-0 mt-0.5" />
+                        <MapPin className="h-3.5 w-3.5 md:h-4 md:w-4 text-chart-1 flex-shrink-0 mt-0.5" />
                         <span className="line-clamp-2">{counsellor.address || `${counsellor.city}, ${counsellor.province}`}</span>
                       </div>
                       <div className="flex items-center gap-2">
-                        <Phone className="h-4 w-4 text-chart-1 flex-shrink-0" />
+                        <Phone className="h-3.5 w-3.5 md:h-4 md:w-4 text-chart-1 flex-shrink-0" />
                         <ProtectedContact value={counsellor.phone} type="phone" />
                       </div>
                       {counsellor.email && (
                         <div className="flex items-center gap-2">
-                          <Mail className="h-4 w-4 text-chart-1 flex-shrink-0" />
+                          <Mail className="h-3.5 w-3.5 md:h-4 md:w-4 text-chart-1 flex-shrink-0" />
                           <ProtectedContact value={counsellor.email} type="email" />
                         </div>
                       )}
                       <div className="pt-2">
-                        <div className="inline-block text-xs bg-secondary px-2 py-0.5 rounded text-primary/70">
+                        <div className="inline-block text-[10px] md:text-xs bg-secondary px-2 py-0.5 rounded text-primary/70">
                           NCR: {counsellor.ncr_number}
                         </div>
                       </div>
                     </div>
 
-                    <Button className="w-full bg-primary text-primary-foreground hover:bg-primary/90 font-sans mt-auto">
+                    <Button className="w-full bg-primary text-primary-foreground hover:bg-primary/90 font-sans mt-auto text-sm md:text-base py-2 md:py-2.5 h-auto">
                       Contact Counsellor
                     </Button>
                   </CardContent>

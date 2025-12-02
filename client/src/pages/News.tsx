@@ -1,6 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Calendar, Clock, ArrowRight } from "lucide-react";
+import { Link } from "wouter";
 import GoogleAd from "@/components/GoogleAd";
 import SEOHead from "@/components/SEOHead";
 
@@ -103,9 +104,11 @@ export default function News() {
               <p className="text-muted-foreground mb-6 leading-relaxed">
                 The Minister of Trade, Industry and Competition has withdrawn the draft regulations which listed educational institutions as credit providers. This decision follows extensive public consultation...
               </p>
-              <button className="flex items-center gap-2 text-chart-1 font-bold hover:gap-3 transition-all">
-                Read Full Article <ArrowRight className="h-4 w-4" />
-              </button>
+              <Link href="/news/1">
+                <button className="flex items-center gap-2 text-chart-1 font-bold hover:gap-3 transition-all">
+                  Read Full Article <ArrowRight className="h-4 w-4" />
+                </button>
+              </Link>
             </div>
           </Card>
         </div>
@@ -116,37 +119,39 @@ export default function News() {
             <GoogleAd slot="9988776655" format="rectangle" className="my-0" />
           </div>
           {newsItems.slice(1).map((item) => (
-            <Card key={item.id} className="break-inside-avoid border-none shadow-md hover:shadow-xl transition-all duration-300 bg-white group">
-              {item.image && (
-                <div className="relative h-48 overflow-hidden rounded-t-xl">
-                  <img 
-                    src={item.image} 
-                    alt={item.title} 
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
-                </div>
-              )}
-              <CardHeader>
-                <div className="flex justify-between items-center mb-2">
-                  <Badge variant="outline" className="border-chart-2/30 text-chart-2">{item.category}</Badge>
-                  <span className="text-xs text-muted-foreground flex items-center gap-1">
-                    <Clock className="h-3 w-3" /> {item.readTime}
-                  </span>
-                </div>
-                <CardTitle className="font-sans text-xl text-primary group-hover:text-chart-1 transition-colors">
-                  {item.title}
-                </CardTitle>
-                <p className="text-xs text-muted-foreground mt-1">{item.date}</p>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground text-sm leading-relaxed">
-                  {item.excerpt}
-                </p>
-                <div className="mt-4 pt-4 border-t border-border flex justify-end">
-                  <ArrowRight className="h-4 w-4 text-chart-1 opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all" />
-                </div>
-              </CardContent>
-            </Card>
+            <Link key={item.id} href={`/news/${item.id}`}>
+              <Card className="break-inside-avoid border-none shadow-md hover:shadow-xl transition-all duration-300 bg-white group cursor-pointer">
+                {item.image && (
+                  <div className="relative h-48 overflow-hidden rounded-t-xl">
+                    <img 
+                      src={item.image} 
+                      alt={item.title} 
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                  </div>
+                )}
+                <CardHeader>
+                  <div className="flex justify-between items-center mb-2">
+                    <Badge variant="outline" className="border-chart-2/30 text-chart-2">{item.category}</Badge>
+                    <span className="text-xs text-muted-foreground flex items-center gap-1">
+                      <Clock className="h-3 w-3" /> {item.readTime}
+                    </span>
+                  </div>
+                  <CardTitle className="font-sans text-xl text-primary group-hover:text-chart-1 transition-colors">
+                    {item.title}
+                  </CardTitle>
+                  <p className="text-xs text-muted-foreground mt-1">{item.date}</p>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground text-sm leading-relaxed">
+                    {item.excerpt}
+                  </p>
+                  <div className="mt-4 pt-4 border-t border-border flex justify-end">
+                    <ArrowRight className="h-4 w-4 text-chart-1 opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all" />
+                  </div>
+                </CardContent>
+              </Card>
+            </Link>
           ))}
         </div>
       </div>

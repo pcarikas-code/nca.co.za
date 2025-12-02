@@ -9,6 +9,7 @@ import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
 import TheAct from "./pages/TheAct";
 import News from "./pages/News";
+import NewsDetail from "./pages/NewsDetail";
 import DebtCounsellors from "./pages/DebtCounsellors";
 import FAQ from "./pages/FAQ";
 import NotFound from "./pages/NotFound";
@@ -18,9 +19,10 @@ function Router() {
     <Layout>
       <Switch>
         <Route path="/" component={Home} />
-        <Route path="/the-act" component={TheAct} />
-        <Route path="/news" component={News} />
-        <Route path="/debt-counsellors" component={DebtCounsellors} />
+          <Route path="/the-act" component={TheAct} />
+          <Route path="/news" component={News} />
+          <Route path="/news/:id" component={NewsDetail} />
+          <Route path="/debt-counsellors" component={DebtCounsellors} />
         <Route path="/faq" component={FAQ} />
         <Route component={NotFound} />
       </Switch>
