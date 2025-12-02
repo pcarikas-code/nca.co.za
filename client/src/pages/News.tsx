@@ -4,64 +4,10 @@ import { Calendar, Clock, ArrowRight } from "lucide-react";
 import { Link } from "wouter";
 import GoogleAd from "@/components/GoogleAd";
 import SEOHead from "@/components/SEOHead";
+import newsData from "@/data/news.json";
 
 export default function News() {
-  const newsItems = [
-    {
-      id: 1,
-      title: "Minister Withdraws NCA Amendment Regulations",
-      date: "Sep 12, 2025",
-      category: "Regulation",
-      readTime: "4 min read",
-      excerpt: "The Minister of Trade, Industry and Competition has withdrawn the draft regulations which listed educational institutions as credit providers. This decision follows extensive public consultation and concerns raised by the banking sector regarding the impact on student access to finance.",
-      image: "/images/news-bg.png"
-    },
-    {
-      id: 2,
-      title: "Draft Amendments to Affordability Assessment",
-      date: "Aug 19, 2025",
-      category: "Policy",
-      readTime: "6 min read",
-      excerpt: "New draft amendments aim to strengthen consumer protection by revising how affordability assessments are conducted by credit providers. The proposed changes seek to ensure a more rigorous verification of consumer income and expenses.",
-      image: null
-    },
-    {
-      id: 3,
-      title: "Debt Counselling: A Lifeline for Millennials",
-      date: "Oct 07, 2025",
-      category: "Trends",
-      readTime: "5 min read",
-      excerpt: "Recent indices reveal a stark financial reality for South African millennials, with debt counselling becoming a critical tool for financial recovery. Rising living costs and high interest rates are driving younger consumers to seek professional help.",
-      image: "/images/debt-counselling.png"
-    },
-    {
-      id: 4,
-      title: "Banking Association Concerns Over Withdrawals",
-      date: "Sep 15, 2025",
-      category: "Industry",
-      readTime: "3 min read",
-      excerpt: "BASA warns that withdrawing NCA draft amendments delays MSME access to finance, undermines due process, and risks economic growth. The association calls for a more stable regulatory environment.",
-      image: null
-    },
-    {
-      id: 5,
-      title: "ZeroDebt Launches New Calculator",
-      date: "Nov 21, 2025",
-      category: "Tools",
-      readTime: "2 min read",
-      excerpt: "A new free debt review calculator helps South Africans see potential monthly savings and understand how debt review can make a difference in their monthly budget.",
-      image: null
-    },
-    {
-      id: 6,
-      title: "Understanding Your Rights: Section 60",
-      date: "Dec 12, 2024",
-      category: "Education",
-      readTime: "8 min read",
-      excerpt: "Under Section 60 of the NCA, every adult in South Africa has the right to apply for credit. Credit providers cannot discriminate against you based on race, gender, or marital status.",
-      image: "/images/legal-act.png"
-    }
-  ];
+  const newsItems = newsData;
 
   return (
     <div className="min-h-screen bg-secondary/30 pb-20">

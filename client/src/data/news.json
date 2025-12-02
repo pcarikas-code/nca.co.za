@@ -1,0 +1,74 @@
+[
+  {
+    "id": 1,
+    "title": "Minister Withdraws NCA Amendment Regulations",
+    "date": "Sep 12, 2025",
+    "category": "Regulation",
+    "readTime": "4 min read",
+    "excerpt": "The Minister of Trade, Industry and Competition has withdrawn the draft regulations which listed educational institutions as credit providers. This decision follows extensive public consultation and concerns raised by the banking sector regarding the impact on student access to finance.",
+    "content": "The Minister of Trade, Industry and Competition has officially withdrawn the draft regulations that proposed listing educational institutions as credit providers under the National Credit Act (NCA). This decision comes after significant pushback from the banking sector and educational bodies, who argued that such a classification would severely hamper student access to finance.\n\nThe withdrawal notice was published in the Government Gazette, effectively nullifying the previous proposal. Industry experts have welcomed the move, stating that it allows for a more nuanced approach to student debt that doesn't inadvertently cut off funding avenues for those seeking higher education.\n\nMoving forward, the Department has indicated it will engage in further consultations to find a balanced regulatory framework that protects consumers without stifling the education sector.",
+    "image": "/images/news-bg.png",
+    "source": "Government Gazette",
+    "sourceUrl": "https://www.gov.za/"
+  },
+  {
+    "id": 2,
+    "title": "Draft Amendments to Affordability Assessment",
+    "date": "Aug 19, 2025",
+    "category": "Policy",
+    "readTime": "6 min read",
+    "excerpt": "New draft amendments aim to strengthen consumer protection by revising how affordability assessments are conducted by credit providers. The proposed changes seek to ensure a more rigorous verification of consumer income and expenses.",
+    "content": "The National Credit Regulator (NCR) has released draft amendments to the affordability assessment regulations. These changes are designed to close loopholes that have allowed some credit providers to grant loans to consumers who cannot realistically afford them.\n\nKey proposals include:\n- Stricter requirements for verifying discretionary income.\n- Mandatory inclusion of all maintenance obligations in expense calculations.\n- A standardized 'minimum expense norm' table that credit providers must use as a baseline.\n\nThe public is invited to comment on these draft amendments until the end of October 2025.",
+    "image": null,
+    "source": "National Credit Regulator",
+    "sourceUrl": "https://www.ncr.org.za/"
+  },
+  {
+    "id": 3,
+    "title": "Debt Counselling: A Lifeline for Millennials",
+    "date": "Oct 07, 2025",
+    "category": "Trends",
+    "readTime": "5 min read",
+    "excerpt": "Recent indices reveal a stark financial reality for South African millennials, with debt counselling becoming a critical tool for financial recovery. Rising living costs and high interest rates are driving younger consumers to seek professional help.",
+    "content": "A recent consumer credit index report highlights a worrying trend: South African millennials are increasingly falling into over-indebtedness. The combination of high interest rates, stagnant wages, and rising cost of living has created a perfect storm for this demographic.\n\nHowever, the report also notes a positive shift in behavior—more young people are proactively seeking debt counselling earlier in the cycle. 'Debt counselling is no longer seen as a stigma, but as a strategic financial management tool,' says a leading debt counsellor. This proactive approach is helping many avoid asset repossession and legal action.",
+    "image": "/images/debt-counselling.png",
+    "source": "Debt Counsellors Association of South Africa",
+    "sourceUrl": "https://www.dcasa.co.za/"
+  },
+  {
+    "id": 4,
+    "title": "Banking Association Concerns Over Withdrawals",
+    "date": "Sep 15, 2025",
+    "category": "Industry",
+    "readTime": "3 min read",
+    "excerpt": "BASA warns that withdrawing NCA draft amendments delays MSME access to finance, undermines due process, and risks economic growth. The association calls for a more stable regulatory environment.",
+    "content": "The Banking Association South Africa (BASA) has expressed concern over the sudden withdrawal of certain NCA draft amendments, arguing that regulatory uncertainty is bad for business. Specifically, they point to the impact on Micro, Small, and Medium Enterprises (MSMEs), which rely on clear credit regulations to access funding.\n\nBASA urges the government to expedite the consultation process and provide a clear roadmap for future amendments to ensure stability in the financial sector.",
+    "image": null,
+    "source": "Banking Association South Africa",
+    "sourceUrl": "https://www.banking.org.za/"
+  },
+  {
+    "id": 5,
+    "title": "ZeroDebt Launches New Calculator",
+    "date": "Nov 21, 2025",
+    "category": "Tools",
+    "readTime": "2 min read",
+    "excerpt": "A new free debt review calculator helps South Africans see potential monthly savings and understand how debt review can make a difference in their monthly budget.",
+    "content": "In an effort to demystify the debt review process, ZeroDebt has launched a free online calculator. This tool allows consumers to input their current debt obligations and see an estimated repayment plan under debt review.\n\n'Many consumers are scared of debt review because they don't know what the numbers look like,' says the CEO of ZeroDebt. 'This calculator gives them a transparent view of the potential savings, often reducing monthly installments by up to 60%.'",
+    "image": null,
+    "source": "ZeroDebt Press Release",
+    "sourceUrl": "#"
+  },
+  {
+    "id": 6,
+    "title": "Understanding Your Rights: Section 60",
+    "date": "Dec 12, 2024",
+    "category": "Education",
+    "readTime": "8 min read",
+    "excerpt": "Under Section 60 of the NCA, every adult in South Africa has the right to apply for credit. Credit providers cannot discriminate against you based on race, gender, or marital status.",
+    "content": "Section 60 of the National Credit Act is a cornerstone of consumer rights in South Africa. It explicitly states that every adult has the right to apply for credit. While it doesn't guarantee that credit will be granted (as affordability checks are mandatory), it ensures that the *opportunity* to apply is open to all.\n\nCrucially, the section prohibits discrimination on the grounds of race, religion, pregnancy, marital status, or gender. If a consumer feels their application was rejected based on discriminatory reasons rather than financial affordability, they have the right to lodge a complaint with the National Credit Regulator.",
+    "image": "/images/legal-act.png",
+    "source": "National Credit Act",
+    "sourceUrl": "https://www.ncr.org.za/"
+  }
+]
