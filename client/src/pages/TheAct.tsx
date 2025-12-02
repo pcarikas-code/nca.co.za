@@ -1,7 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import { BookOpen, FileText, Scale, Shield, ExternalLink } from "lucide-react";
+import { BookOpen, FileText, Scale, Shield, ExternalLink, AlertTriangle, Users, Gavel, Building } from "lucide-react";
 import GoogleAd from "@/components/GoogleAd";
 import SEOHead from "@/components/SEOHead";
 import { Link } from "wouter";
@@ -18,13 +18,13 @@ export default function TheAct() {
     { id: "purpose", label: "Purpose of the Act" },
     { id: "amendments", label: "Key Amendments" },
     { id: "rights", label: "Consumer Rights" },
+    { id: "obligations", label: "Credit Provider Obligations" },
     { id: "reckless", label: "Reckless Lending" },
-    // { id: "obligations", label: "Credit Provider Obligations" },
-    // { id: "over-indebtedness", label: "Over-indebtedness" },
-    // { id: "counselling", label: "Debt Counselling" },
-    // { id: "dispute", label: "Dispute Resolution" },
-    // { id: "ncr", label: "National Credit Regulator" },
-    // { id: "tribunal", label: "National Consumer Tribunal" }
+    { id: "over-indebtedness", label: "Over-indebtedness" },
+    { id: "counselling", label: "Debt Counselling" },
+    { id: "dispute", label: "Dispute Resolution" },
+    { id: "ncr", label: "National Credit Regulator" },
+    { id: "tribunal", label: "National Consumer Tribunal" }
   ];
 
   return (
@@ -65,7 +65,7 @@ export default function TheAct() {
                         onClick={() => scrollToSection(item.id)}
                         className="flex items-center gap-3 text-muted-foreground hover:text-chart-1 cursor-pointer transition-colors"
                       >
-                        <span className="text-xs font-bold text-chart-1/50">0{i + 1}</span>
+                        <span className="text-xs font-bold text-chart-1/50">{String(i + 1).padStart(2, '0')}</span>
                         {item.label}
                       </li>
                     ))}
@@ -220,12 +220,31 @@ export default function TheAct() {
             </div>
           </section>
 
-          {/* Section 4: Reckless Lending */}
+          {/* Section 4: Credit Provider Obligations */}
+          <section id="obligations" className="scroll-mt-24">
+            <div className="flex items-center gap-4 mb-6">
+              <div className="h-12 w-12 rounded-full bg-chart-4/10 flex items-center justify-center text-chart-4">
+                <Building className="h-6 w-6" />
+              </div>
+              <h2 className="text-3xl font-bold font-sans text-primary">Credit Provider Obligations</h2>
+            </div>
+            <div className="prose prose-lg text-muted-foreground max-w-none">
+              <p>Credit providers must register with the National Credit Regulator and adhere to strict guidelines, including:</p>
+              <ul className="list-disc pl-6 space-y-2">
+                <li>Conducting thorough affordability assessments before granting credit.</li>
+                <li>Providing clear and understandable pre-agreement statements and quotations.</li>
+                <li>Ensuring marketing practices are not misleading or deceptive.</li>
+                <li>Reporting accurate consumer credit information to credit bureaus.</li>
+              </ul>
+            </div>
+          </section>
+
+          {/* Section 5: Reckless Lending */}
           <section id="reckless" className="scroll-mt-24">
             <GoogleAd slot="5544332211" className="mb-8" />
             <div className="flex items-center gap-4 mb-6">
               <div className="h-12 w-12 rounded-full bg-chart-5/10 flex items-center justify-center text-chart-5">
-                <FileText className="h-6 w-6" />
+                <AlertTriangle className="h-6 w-6" />
               </div>
               <h2 className="text-3xl font-bold font-sans text-primary">Reckless Lending</h2>
             </div>
@@ -255,6 +274,113 @@ export default function TheAct() {
                 </div>
               </CardContent>
             </Card>
+          </section>
+
+          {/* Section 6: Over-indebtedness */}
+          <section id="over-indebtedness" className="scroll-mt-24">
+            <div className="flex items-center gap-4 mb-6">
+              <div className="h-12 w-12 rounded-full bg-chart-1/10 flex items-center justify-center text-chart-1">
+                <Scale className="h-6 w-6" />
+              </div>
+              <h2 className="text-3xl font-bold font-sans text-primary">Over-indebtedness</h2>
+            </div>
+            <div className="prose prose-lg text-muted-foreground max-w-none">
+              <p>
+                A consumer is over-indebted if the preponderance of available information indicates that the consumer is or will be unable to satisfy in a timely manner all the obligations under all the credit agreements to which the consumer is a party.
+              </p>
+              <p>
+                When determining over-indebtedness, a debt counsellor must consider the consumer's:
+              </p>
+              <ul className="list-disc pl-6 space-y-2">
+                <li>Financial means, prospects, and obligations.</li>
+                <li>Probable propensity to satisfy obligations in a timely manner.</li>
+              </ul>
+            </div>
+          </section>
+
+          {/* Section 7: Debt Counselling */}
+          <section id="counselling" className="scroll-mt-24">
+            <div className="flex items-center gap-4 mb-6">
+              <div className="h-12 w-12 rounded-full bg-chart-2/10 flex items-center justify-center text-chart-2">
+                <Users className="h-6 w-6" />
+              </div>
+              <h2 className="text-3xl font-bold font-sans text-primary">Debt Counselling</h2>
+            </div>
+            <div className="prose prose-lg text-muted-foreground max-w-none">
+              <p>
+                Debt counselling is a formal debt restructuring process for over-indebted consumers. A registered debt counsellor assesses the consumer's financial situation and, if they are found to be over-indebted, proposes a restructuring plan to the Magistrate's Court.
+              </p>
+              <p>
+                <strong>Benefits of Debt Counselling:</strong>
+              </p>
+              <ul className="list-disc pl-6 space-y-2">
+                <li>Legal protection against legal action from credit providers (for 60 days).</li>
+                <li>Restructured monthly payments to make them affordable.</li>
+                <li>Potential reduction in interest rates.</li>
+                <li>Clear path to rehabilitation and a clearance certificate.</li>
+              </ul>
+            </div>
+          </section>
+
+          {/* Section 8: Dispute Resolution */}
+          <section id="dispute" className="scroll-mt-24">
+            <div className="flex items-center gap-4 mb-6">
+              <div className="h-12 w-12 rounded-full bg-chart-3/10 flex items-center justify-center text-chart-3">
+                <Gavel className="h-6 w-6" />
+              </div>
+              <h2 className="text-3xl font-bold font-sans text-primary">Dispute Resolution</h2>
+            </div>
+            <div className="prose prose-lg text-muted-foreground max-w-none">
+              <p>
+                Consumers have the right to resolve disputes regarding credit agreements. The Act provides for several mechanisms:
+              </p>
+              <ul className="list-disc pl-6 space-y-2">
+                <li><strong>Alternative Dispute Resolution (ADR):</strong> Mediation or conciliation through an ombud or ADR agent.</li>
+                <li><strong>National Credit Regulator (NCR):</strong> Filing a complaint with the NCR for investigation.</li>
+                <li><strong>National Consumer Tribunal (NCT):</strong> Adjudication of disputes and enforcement of the Act.</li>
+              </ul>
+            </div>
+          </section>
+
+          {/* Section 9: National Credit Regulator */}
+          <section id="ncr" className="scroll-mt-24">
+            <div className="flex items-center gap-4 mb-6">
+              <div className="h-12 w-12 rounded-full bg-chart-4/10 flex items-center justify-center text-chart-4">
+                <Building className="h-6 w-6" />
+              </div>
+              <h2 className="text-3xl font-bold font-sans text-primary">National Credit Regulator (NCR)</h2>
+            </div>
+            <div className="prose prose-lg text-muted-foreground max-w-none">
+              <p>
+                The NCR is the primary regulator responsible for enforcing the National Credit Act. Its functions include:
+              </p>
+              <ul className="list-disc pl-6 space-y-2">
+                <li>Registering credit providers, credit bureaus, and debt counsellors.</li>
+                <li>Monitoring the credit market to ensure compliance.</li>
+                <li>Investigating complaints and enforcing the Act.</li>
+                <li>Promoting consumer education and awareness.</li>
+              </ul>
+            </div>
+          </section>
+
+          {/* Section 10: National Consumer Tribunal */}
+          <section id="tribunal" className="scroll-mt-24">
+            <div className="flex items-center gap-4 mb-6">
+              <div className="h-12 w-12 rounded-full bg-chart-5/10 flex items-center justify-center text-chart-5">
+                <Gavel className="h-6 w-6" />
+              </div>
+              <h2 className="text-3xl font-bold font-sans text-primary">National Consumer Tribunal (NCT)</h2>
+            </div>
+            <div className="prose prose-lg text-muted-foreground max-w-none">
+              <p>
+                The NCT is an independent adjudicative body with jurisdiction throughout South Africa. It hears cases regarding:
+              </p>
+              <ul className="list-disc pl-6 space-y-2">
+                <li>Alleged prohibited conduct by credit providers.</li>
+                <li>Applications for debt re-arrangement.</li>
+                <li>Reviews of decisions made by the NCR.</li>
+              </ul>
+            </div>
           </section>
 
         </div>
