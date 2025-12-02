@@ -91,25 +91,7 @@ export default function FAQ() {
           ))}
         </div>
 
-        {/* Sidebar Contact */}
-        <div className="md:col-span-4 space-y-6">
-          <div className="bg-primary text-primary-foreground p-8 rounded-2xl shadow-xl sticky top-24">
-            <div className="h-12 w-12 bg-white/10 rounded-full flex items-center justify-center mb-6">
-              <MessageCircle className="h-6 w-6 text-white" />
-            </div>
-            <h3 className="font-sans font-bold text-2xl mb-4">Still have questions?</h3>
-            <p className="text-primary-foreground/80 mb-8 leading-relaxed">
-              Can't find the answer you're looking for? Our team is here to help you understand your rights.
-            </p>
-            <Button className="w-full bg-white text-primary hover:bg-white/90 font-sans font-bold h-12 text-lg">
-              Contact Support
-            </Button>
-            <div className="mt-6 pt-6 border-t border-white/10 text-center">
-              <p className="text-sm text-primary-foreground/60 mb-2">Or call us directly</p>
-              <p className="font-sans font-bold text-xl">0860 627 627</p>
-            </div>
-          </div>
-        </div>
+        {/* Sidebar Contact Removed */}
       </div>
     </div>
   );

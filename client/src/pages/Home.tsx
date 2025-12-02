@@ -227,11 +227,7 @@ export default function Home() {
                 Read FAQs
               </Button>
             </Link>
-            <Link href="/contact">
-              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10 font-sans text-lg px-10">
-                Contact Us
-              </Button>
-            </Link>
+            {/* Contact Button Removed */}
           </div>
         </div>
       </section>

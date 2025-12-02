@@ -1,6 +1,6 @@
 import { Link, useLocation } from "wouter";
 import { cn } from "@/lib/utils";
-import { Menu, X, Phone, Mail, Facebook, Twitter, Linkedin } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 
@@ -18,20 +18,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 
   return (
     <div className="min-h-screen flex flex-col font-serif">
-      {/* Top Bar */}
-      <div className="bg-primary text-primary-foreground py-2 text-sm">
-        <div className="container flex justify-between items-center">
-          <div className="flex gap-4">
-            <span className="flex items-center gap-1"><Phone className="h-3 w-3" /> 0860 627 627</span>
-            <span className="flex items-center gap-1"><Mail className="h-3 w-3" /> info@nca.co.za</span>
-          </div>
-          <div className="flex gap-3">
-            <Facebook className="h-3 w-3 cursor-pointer hover:text-chart-2 transition-colors" />
-            <Twitter className="h-3 w-3 cursor-pointer hover:text-chart-2 transition-colors" />
-            <Linkedin className="h-3 w-3 cursor-pointer hover:text-chart-2 transition-colors" />
-          </div>
-        </div>
-      </div>
+      {/* Top Bar Removed */}
 
       {/* Main Navigation */}
       <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
@@ -133,32 +120,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             </ul>
           </div>
 
-          <div>
-            <h3 className="font-sans font-bold text-lg mb-4 text-chart-2">Contact Us</h3>
-            <ul className="space-y-2 text-sm">
-              <li className="flex items-center gap-2"><Phone className="h-4 w-4 text-chart-1" /> 0860 627 627</li>
-              <li className="flex items-center gap-2"><Mail className="h-4 w-4 text-chart-1" /> info@nca.co.za</li>
-              <li className="mt-4 text-primary-foreground/60">
-                1234 Francis Baard Street,<br />
-                Pretoria, South Africa
-              </li>
-            </ul>
-          </div>
-
-          <div>
-            <h3 className="font-sans font-bold text-lg mb-4 text-chart-2">Newsletter</h3>
-            <p className="text-sm mb-4 text-primary-foreground/80">Stay updated with the latest amendments and consumer rights news.</p>
-            <div className="flex gap-2">
-              <input 
-                type="email" 
-                placeholder="Your email" 
-                className="bg-white/10 border-white/20 text-white placeholder:text-white/50 rounded px-3 py-2 text-sm w-full focus:outline-none focus:ring-1 focus:ring-chart-2"
-              />
-              <Button size="sm" className="bg-chart-1 hover:bg-chart-1/90 text-white">
-                Join
-              </Button>
-            </div>
-          </div>
+          {/* Contact and Newsletter Removed */}
         </div>
         <div className="container mt-12 pt-8 border-t border-white/10 text-center text-sm text-primary-foreground/60">
           <p>&copy; {new Date().getFullYear()} National Credit Adviser. All rights reserved.</p>
