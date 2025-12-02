@@ -18,7 +18,10 @@ export default function GlossaryTerm({ term, children }: GlossaryTermProps) {
   return (
     <Tooltip>
       <TooltipTrigger asChild>
-        <span className="cursor-help border-b border-dotted border-chart-1 text-primary font-medium inline-flex items-center gap-0.5 hover:text-chart-1 transition-colors">
+        <span 
+          className="cursor-help border-b border-dotted border-chart-1 text-primary font-medium inline-flex items-center gap-0.5 hover:text-chart-1 transition-colors touch-manipulation"
+          onClick={(e) => e.preventDefault()} // Prevent default behavior on touch to ensure tooltip opens
+        >
           {children || term}
           <Info className="h-3 w-3 opacity-50" />
         </span>
