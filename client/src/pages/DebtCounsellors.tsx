@@ -172,7 +172,16 @@ export default function DebtCounsellors() {
                       </div>
                     </div>
 
-                    <Button className="w-full bg-primary text-primary-foreground hover:bg-primary/90 font-sans mt-auto text-sm md:text-base py-2 md:py-2.5 h-auto">
+                    <Button 
+                      className="w-full bg-primary text-primary-foreground hover:bg-primary/90 font-sans mt-auto text-sm md:text-base py-2 md:py-2.5 h-auto"
+                      onClick={() => {
+                        if (counsellor.email) {
+                          window.location.href = `mailto:${counsellor.email}?subject=Enquiry via National Credit Adviser`;
+                        } else if (counsellor.phone) {
+                          window.location.href = `tel:${counsellor.phone}`;
+                        }
+                      }}
+                    >
                       Contact Counsellor
                     </Button>
                   </CardContent>
