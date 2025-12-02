@@ -3,6 +3,7 @@ import { cn } from "@/lib/utils";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
+import Disclaimer from "@/components/Disclaimer";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   const [location] = useLocation();
@@ -93,6 +94,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         {children}
       </main>
 
+      <Disclaimer />
       {/* Footer */}
       <footer className="bg-primary text-primary-foreground py-12 border-t border-white/10">
         <div className="container grid grid-cols-1 md:grid-cols-4 gap-8">

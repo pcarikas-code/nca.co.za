@@ -1,9 +1,10 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import { BookOpen, FileText, Scale, Shield } from "lucide-react";
+import { BookOpen, FileText, Scale, Shield, ExternalLink } from "lucide-react";
 import GoogleAd from "@/components/GoogleAd";
 import SEOHead from "@/components/SEOHead";
+import { Link } from "wouter";
 
 export default function TheAct() {
   return (
@@ -40,6 +41,7 @@ export default function TheAct() {
                   <ul className="space-y-4 text-sm">
                     {[
                       "Purpose of the Act",
+                      "Key Amendments",
                       "Consumer Rights",
                       "Credit Provider Obligations",
                       "Reckless Credit",
@@ -64,9 +66,11 @@ export default function TheAct() {
               <p className="text-white/80 text-sm mb-4">
                 The Act can be complex. If you are unsure about your rights, consult a registered debt counsellor or legal expert.
               </p>
-              <button className="w-full bg-white text-chart-1 font-bold py-2 rounded hover:bg-white/90 transition-colors text-sm">
-                Find a Counsellor
-              </button>
+              <Link href="/debt-counsellors">
+                <button className="w-full bg-white text-chart-1 font-bold py-2 rounded hover:bg-white/90 transition-colors text-sm">
+                  Find a Counsellor
+                </button>
+              </Link>
             </div>
           </div>
         </div>
@@ -87,6 +91,13 @@ export default function TheAct() {
               <p>
                 The National Credit Act (NCA) was signed into law to address the imbalances in the credit market. It aims to protect consumers from unfair credit practices and to promote a sustainable credit market in South Africa.
               </p>
+              
+              <div className="bg-secondary/30 border-l-4 border-chart-1 p-4 my-6 not-prose">
+                <p className="text-sm text-muted-foreground">
+                  <strong>Note:</strong> This page provides a summary of the Act. For the official and most up-to-date version, including all amendments, please visit the <a href="https://www.ncr.org.za" target="_blank" rel="noopener noreferrer" className="text-chart-1 font-bold hover:underline inline-flex items-center gap-1">National Credit Regulator (NCR) website <ExternalLink className="h-3 w-3" /></a>.
+                </p>
+              </div>
+
               <p>
                 <strong>Key Objectives:</strong>
               </p>
@@ -99,7 +110,59 @@ export default function TheAct() {
             </div>
           </section>
 
-          {/* Section 2: Consumer Rights */}
+          {/* Section 2: Key Amendments */}
+          <section>
+            <div className="flex items-center gap-4 mb-6">
+              <div className="h-12 w-12 rounded-full bg-chart-2/10 flex items-center justify-center text-chart-2">
+                <FileText className="h-6 w-6" />
+              </div>
+              <h2 className="text-3xl font-bold font-sans text-primary">Key Amendments</h2>
+            </div>
+            <div className="grid gap-6">
+              <Card className="border-none shadow-md bg-white">
+                <CardHeader>
+                  <CardTitle className="text-lg font-bold text-chart-2">National Credit Amendment Act, 2014</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-sm text-muted-foreground">
+                    Introduced "debt intervention" measures to assist low-income consumers, strengthened affordability assessment regulations, and clarified reckless lending definitions.
+                  </p>
+                </CardContent>
+              </Card>
+              <Card className="border-none shadow-md bg-white">
+                <CardHeader>
+                  <CardTitle className="text-lg font-bold text-chart-2">Consumer Protection Act, 2008</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-sm text-muted-foreground">
+                    Amended the NCA to align consumer rights across credit and general consumer markets, ensuring consistent protection standards.
+                  </p>
+                </CardContent>
+              </Card>
+              <Card className="border-none shadow-md bg-white">
+                <CardHeader>
+                  <CardTitle className="text-lg font-bold text-chart-2">Financial Sector Regulation Act, 2017</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-sm text-muted-foreground">
+                    Established the "Twin Peaks" model of financial regulation, impacting how credit providers are supervised for market conduct.
+                  </p>
+                </CardContent>
+              </Card>
+              <Card className="border-none shadow-md bg-white">
+                <CardHeader>
+                  <CardTitle className="text-lg font-bold text-chart-2">POPI Act, 2013</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-sm text-muted-foreground">
+                    Amended the NCA to ensure the protection of personal information held by credit bureaus and credit providers.
+                  </p>
+                </CardContent>
+              </Card>
+            </div>
+          </section>
+
+          {/* Section 3: Consumer Rights */}
           <section>
             <div className="flex items-center gap-4 mb-6">
               <div className="h-12 w-12 rounded-full bg-chart-3/10 flex items-center justify-center text-chart-3">
@@ -144,7 +207,7 @@ export default function TheAct() {
             </div>
           </section>
 
-          {/* Section 3: Reckless Lending */}
+          {/* Section 4: Reckless Lending */}
           <section>
             <GoogleAd slot="5544332211" className="mb-8" />
             <div className="flex items-center gap-4 mb-6">
