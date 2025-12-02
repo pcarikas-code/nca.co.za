@@ -5,101 +5,13 @@ import { MapPin, Phone, Star, UserCheck } from "lucide-react";
 import { useState, useMemo } from "react";
 import GoogleAd from "@/components/GoogleAd";
 import SEOHead from "@/components/SEOHead";
+import counsellorsData from "@/data/counsellors.json";
 
-// Mock Data for Counsellors with more specific locations
-const counsellors = [
-  {
-    id: 1,
-    name: "Thandiwe Nkosi",
-    company: "Nkosi Debt Solutions",
-    province: "Gauteng",
-    city: "Johannesburg",
-    rating: 4.9,
-    reviews: 124,
-    phone: "011 123 4567",
-    verified: true
-  },
-  {
-    id: 2,
-    name: "Pieter Van Der Merwe",
-    company: "Secure Future Debt Counsellors",
-    province: "Gauteng",
-    city: "Pretoria",
-    rating: 4.8,
-    reviews: 98,
-    phone: "012 345 6789",
-    verified: true
-  },
-  {
-    id: 3,
-    name: "Sarah James",
-    company: "Cape Debt Relief",
-    province: "Western Cape",
-    city: "Cape Town",
-    rating: 4.7,
-    reviews: 85,
-    phone: "021 987 6543",
-    verified: true
-  },
-  {
-    id: 4,
-    name: "Sipho Mthembu",
-    company: "Durban Debt Rescue",
-    province: "KwaZulu-Natal",
-    city: "Durban",
-    rating: 4.9,
-    reviews: 156,
-    phone: "031 555 1234",
-    verified: true
-  },
-  {
-    id: 5,
-    name: "Michelle Naidoo",
-    company: "Freedom Debt Counsellors",
-    province: "Gauteng",
-    city: "Sandton",
-    rating: 4.6,
-    reviews: 42,
-    phone: "011 888 9999",
-    verified: true
-  },
-  {
-    id: 6,
-    name: "John Smith",
-    company: "National Debt Advisors",
-    province: "Eastern Cape",
-    city: "Port Elizabeth",
-    rating: 4.5,
-    reviews: 30,
-    phone: "041 222 3333",
-    verified: true
-  },
-  {
-    id: 7,
-    name: "Lerato Molefe",
-    company: "Soweto Debt Help",
-    province: "Gauteng",
-    city: "Soweto",
-    rating: 4.7,
-    reviews: 65,
-    phone: "011 987 6543",
-    verified: true
-  },
-  {
-    id: 8,
-    name: "David Botha",
-    company: "Stellenbosch Financial Aid",
-    province: "Western Cape",
-    city: "Stellenbosch",
-    rating: 4.8,
-    reviews: 22,
-    phone: "021 888 7777",
-    verified: true
-  }
-];
+// Use real data
+const counsellors = counsellorsData;
 
 // Extract unique provinces and cities
-const provinces = Array.from(new Set(counsellors.map(c => c.province))).sort();
+const provinces = Array.from(new Set(counsellors.map(c => c.province).filter(p => p !== "Other"))).sort();
 
 export default function DebtCounsellors() {
   const [selectedProvince, setSelectedProvince] = useState<string>("");
@@ -224,17 +136,17 @@ export default function DebtCounsellors() {
                   
                   <div className="space-y-2 text-sm text-muted-foreground mb-6">
                     <div className="flex items-center gap-2">
-                      <MapPin className="h-4 w-4 text-chart-1" />
-                      {counsellor.city}, {counsellor.province}
+                      <MapPin className="h-4 w-4 text-chart-1 flex-shrink-0" />
+                      <span className="truncate">{counsellor.address || `${counsellor.city}, ${counsellor.province}`}</span>
                     </div>
                     <div className="flex items-center gap-2">
-                      <Phone className="h-4 w-4 text-chart-1" />
+                      <Phone className="h-4 w-4 text-chart-1 flex-shrink-0" />
                       {counsellor.phone}
                     </div>
                     <div className="flex items-center gap-2">
-                      <Star className="h-4 w-4 text-yellow-500 fill-yellow-500" />
-                      <span className="font-bold text-primary">{counsellor.rating}</span>
-                      <span className="text-muted-foreground/60">({counsellor.reviews} reviews)</span>
+                      <div className="text-xs bg-secondary px-2 py-0.5 rounded text-primary/70">
+                        NCR: {counsellor.ncr_number}
+                      </div>
                     </div>
                   </div>
 
