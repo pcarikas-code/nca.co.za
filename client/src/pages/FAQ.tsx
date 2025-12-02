@@ -2,6 +2,8 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Search, HelpCircle, MessageCircle } from "lucide-react";
+import GoogleAd from "@/components/GoogleAd";
+import SEOHead from "@/components/SEOHead";
 
 export default function FAQ() {
   const faqs = [
@@ -41,6 +43,11 @@ export default function FAQ() {
 
   return (
     <div className="min-h-screen bg-background pb-20">
+      <SEOHead 
+        title="Frequently Asked Questions" 
+        description="Get answers to common questions about the National Credit Act, debt review process, and consumer rights in South Africa."
+      />
+      
       {/* Header */}
       <div className="bg-secondary py-20 relative overflow-hidden">
         <div className="absolute right-0 top-0 h-full w-1/3 bg-[url('/images/faq-illustration.png')] bg-contain bg-no-repeat bg-right-bottom opacity-20 mix-blend-multiply hidden md:block"></div>
@@ -69,6 +76,7 @@ export default function FAQ() {
       <div className="container mt-16 grid md:grid-cols-12 gap-12">
         {/* Main FAQ List */}
         <div className="md:col-span-8 space-y-6">
+          <GoogleAd slot="2233445566" className="mb-6" />
           {faqs.map((faq, i) => (
             <Accordion type="single" collapsible key={i} className="bg-white border border-border rounded-xl px-6 shadow-sm hover:shadow-md transition-shadow">
               <AccordionItem value={`item-${i}`} className="border-none">

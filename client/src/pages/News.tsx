@@ -1,6 +1,8 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Calendar, Clock, ArrowRight } from "lucide-react";
+import GoogleAd from "@/components/GoogleAd";
+import SEOHead from "@/components/SEOHead";
 
 export default function News() {
   const newsItems = [
@@ -62,6 +64,11 @@ export default function News() {
 
   return (
     <div className="min-h-screen bg-secondary/30 pb-20">
+      <SEOHead 
+        title="News & Insights" 
+        description="Latest news, updates, and insights regarding the National Credit Act, debt counselling trends, and consumer finance in South Africa."
+      />
+      
       <div className="bg-primary text-primary-foreground py-16">
         <div className="container text-center">
           <h1 className="text-4xl md:text-5xl font-bold font-sans mb-4">News & Insights</h1>
@@ -105,6 +112,9 @@ export default function News() {
 
         {/* Masonry Grid */}
         <div className="columns-1 md:columns-2 lg:columns-3 gap-8 space-y-8">
+          <div className="break-inside-avoid">
+            <GoogleAd slot="9988776655" format="rectangle" className="my-0" />
+          </div>
           {newsItems.slice(1).map((item) => (
             <Card key={item.id} className="break-inside-avoid border-none shadow-md hover:shadow-xl transition-all duration-300 bg-white group">
               {item.image && (

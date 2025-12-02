@@ -2,10 +2,17 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { BookOpen, FileText, Scale, Shield } from "lucide-react";
+import GoogleAd from "@/components/GoogleAd";
+import SEOHead from "@/components/SEOHead";
 
 export default function TheAct() {
   return (
     <div className="min-h-screen bg-background pb-20">
+      <SEOHead 
+        title="The National Credit Act" 
+        description="Read the full National Credit Act No. 34 of 2005. Understand your consumer rights, credit provider obligations, and reckless lending regulations."
+      />
+      
       {/* Header */}
       <div className="bg-primary text-primary-foreground py-20 relative overflow-hidden">
         <div className="absolute inset-0 bg-[url('/images/legal-act.png')] bg-cover bg-center opacity-10 mix-blend-overlay"></div>
@@ -66,6 +73,7 @@ export default function TheAct() {
 
         {/* Main Content */}
         <div className="md:col-span-2 space-y-12">
+          <GoogleAd slot="1122334455" className="mb-8" />
           
           {/* Section 1: Purpose */}
           <section>
@@ -138,6 +146,7 @@ export default function TheAct() {
 
           {/* Section 3: Reckless Lending */}
           <section>
+            <GoogleAd slot="5544332211" className="mb-8" />
             <div className="flex items-center gap-4 mb-6">
               <div className="h-12 w-12 rounded-full bg-chart-5/10 flex items-center justify-center text-chart-5">
                 <FileText className="h-6 w-6" />

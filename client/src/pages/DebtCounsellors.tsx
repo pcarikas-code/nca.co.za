@@ -4,6 +4,8 @@ import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { MapPin, Phone, Search, Star, UserCheck } from "lucide-react";
 import { useState } from "react";
+import GoogleAd from "@/components/GoogleAd";
+import SEOHead from "@/components/SEOHead";
 
 export default function DebtCounsellors() {
   const [searchTerm, setSearchTerm] = useState("");
@@ -80,6 +82,11 @@ export default function DebtCounsellors() {
 
   return (
     <div className="min-h-screen bg-background pb-20">
+      <SEOHead 
+        title="Find a Debt Counsellor" 
+        description="Search our directory of registered debt counsellors in South Africa. Find verified professionals to help you restructure your debt and achieve financial freedom."
+      />
+      
       {/* Header */}
       <div className="bg-primary text-primary-foreground py-16 relative overflow-hidden">
         <div className="absolute inset-0 bg-[url('/images/debt-counselling.png')] bg-cover bg-center opacity-10 mix-blend-overlay"></div>
@@ -122,6 +129,8 @@ export default function DebtCounsellors() {
 
       {/* Results */}
       <div className="container mt-12">
+        <GoogleAd slot="4455667788" className="mb-12" />
+        
         <div className="flex justify-between items-center mb-8">
           <h2 className="text-2xl font-bold font-sans text-primary">
             {filteredCounsellors.length} Registered Counsellors Found
