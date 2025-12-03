@@ -132,7 +132,7 @@ export default function FAQ() {
         </div>
 
         {/* Sidebar with Ad */}
-        <div className="lg:col-span-4 space-y-8">
+        <div className="lg:col-span-4 space-y-8 self-start">
           <div className="sticky top-24">
             <div className="bg-white p-6 rounded-xl border border-border shadow-sm">
               <h3 className="font-bold text-lg mb-4 text-primary">Sponsored</h3>
