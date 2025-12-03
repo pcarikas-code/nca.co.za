@@ -301,6 +301,7 @@ export default function TheAct() {
 
           {/* Section 7: Debt Counselling */}
           <section id="counselling" className="scroll-mt-24">
+            <GoogleAd slot="2722368811" className="mb-8" label="Advertisement" />
             <div className="flex items-center gap-4 mb-6">
               <div className="h-12 w-12 rounded-full bg-chart-2/10 flex items-center justify-center text-chart-2">
                 <Users className="h-6 w-6" />
