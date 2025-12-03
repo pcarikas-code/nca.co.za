@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, memo } from "react";
 import { cn } from "@/lib/utils";
 import { useLocation } from "wouter";
 
@@ -15,50 +15,37 @@ declare global {
   }
 }
 
-export default function GoogleAd({ slot, format = "auto", className, label = "Advertisement" }: GoogleAdProps) {
-  const adRef = useRef<HTMLModElement>(null);
+function GoogleAdComponent({ slot, format = "auto", className, label = "Advertisement" }: GoogleAdProps) {
   const [location] = useLocation();
-  const initialized = useRef(false);
-
+  // We use the path as a key to force a fresh mount on navigation
+  // This is handled by the parent or the key prop on the element itself if needed,
+  // but here we just want to ensure the effect runs correctly.
+  
   useEffect(() => {
-    // Reset initialization flag when location changes (for SPA navigation)
-    initialized.current = false;
-  }, [location]);
-
-  useEffect(() => {
-    // 1. Check if already initialized to prevent double-push (React Strict Mode / Fast Refresh)
-    if (initialized.current) return;
-
-    // 2. Check if the ref exists
-    if (!adRef.current) return;
-
-    // 3. Check if the ad slot is already populated (AdSense modifies the DOM)
-    // If AdSense has already filled this slot, it will have children or attributes.
-    // We only want to push if it's "fresh".
-    if (adRef.current.innerHTML.trim() !== "") return;
-
     try {
-      // 4. Push the ad request
+      // Push the ad request
+      // We don't check for innerHTML here because if React re-rendered and wiped it,
+      // we WANT to push again. AdSense script is smart enough to handle multiple pushes
+      // as long as the slot is valid and empty.
       (window.adsbygoogle = window.adsbygoogle || []).push({});
-      initialized.current = true;
     } catch (e) {
       console.error("AdSense error:", e);
     }
-  }, [slot, location]); // Re-run if slot or location changes
+  }, [slot, location]); // Re-run on slot change or navigation
 
   return (
     <div className={cn("w-full flex flex-col items-center justify-center my-8", className)}>
       <div className="text-[10px] text-muted-foreground uppercase tracking-widest mb-1 self-start w-full text-center border-b border-border/50 pb-1">
         {label}
       </div>
-      {/* 
-         Keep the container robust. 
-         min-height prevents layout shift (CLS).
-         overflow-hidden ensures no spillover.
-      */}
       <div className="w-full min-h-[280px] md:min-h-[100px] flex items-center justify-center overflow-hidden bg-secondary/5 rounded-lg">
+        {/* 
+          We use a key based on the slot and location to force React to treat this 
+          as a brand new element when the page changes. This prevents React from 
+          trying to "diff" the previous ad iframe against the new empty ins tag.
+        */}
         <ins 
-          ref={adRef}
+          key={`${slot}-${location}`}
           className="adsbygoogle"
           style={{ display: 'block', width: '100%' }}
           data-ad-client="ca-pub-0236593486807878"
@@ -70,3 +57,7 @@ export default function GoogleAd({ slot, format = "auto", className, label = "Ad
     </div>
   );
 }
+
+// React.memo prevents the component from re-rendering when the parent state changes
+// (like typing in the FAQ search box), protecting the AdSense iframe from being wiped.
+export default memo(GoogleAdComponent);
