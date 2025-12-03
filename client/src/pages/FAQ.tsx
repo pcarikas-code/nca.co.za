@@ -107,9 +107,9 @@ export default function FAQ() {
         </div>
       </div>
 
-      <div className="container mt-16 grid lg:grid-cols-12 gap-12">
+      <div className="container mt-16 grid md:grid-cols-12 gap-12">
         {/* Main FAQ List */}
-        <div className="lg:col-span-8 space-y-6">
+        <div className="md:col-span-8 space-y-6">
           {filteredFaqs.length === 0 ? (
             <div className="text-center py-12 bg-white rounded-xl border border-dashed">
               <p className="text-muted-foreground">No answers found matching "{searchQuery}"</p>
@@ -132,7 +132,7 @@ export default function FAQ() {
         </div>
 
         {/* Sidebar with Ad */}
-        <div className="lg:col-span-4 space-y-8 self-start">
+        <div className="md:col-span-4 space-y-8 self-start">
           <div className="sticky top-24">
             <div className="bg-white p-6 rounded-xl border border-border shadow-sm">
               <h3 className="font-bold text-lg mb-4 text-primary">Sponsored</h3>
