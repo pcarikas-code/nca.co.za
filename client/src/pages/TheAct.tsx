@@ -91,7 +91,7 @@ export default function TheAct() {
 
         {/* Main Content */}
         <div className="md:col-span-2 space-y-12">
-          <GoogleAd slot="1122334455" className="mb-8" />
+          <GoogleAd slot="2722368811" className="mb-8" label="Advertisement" />
           
           {/* Section 1: Purpose */}
           <section id="purpose" className="scroll-mt-24">

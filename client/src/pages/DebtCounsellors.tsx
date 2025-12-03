@@ -18,6 +18,16 @@ import counsellorsData from "@/data/counsellors.json";
 // Use real data
 const counsellors = counsellorsData;
 
+// Fisher-Yates shuffle algorithm
+const shuffleArray = <T,>(array: T[]): T[] => {
+  const newArray = [...array];
+  for (let i = newArray.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [newArray[i], newArray[j]] = [newArray[j], newArray[i]];
+  }
+  return newArray;
+};
+
 // Extract unique provinces and cities
 const provinces = Array.from(new Set(counsellors.map(c => c.province).filter(p => p !== "Other"))).sort();
 
@@ -25,7 +35,13 @@ export default function DebtCounsellors() {
   const [selectedProvince, setSelectedProvince] = useState<string>("");
   const [selectedCity, setSelectedCity] = useState<string>("");
   const [currentPage, setCurrentPage] = useState(1);
+  const [shuffledCounsellors, setShuffledCounsellors] = useState(counsellors);
   const itemsPerPage = 12;
+
+  // Randomize on mount
+  useEffect(() => {
+    setShuffledCounsellors(shuffleArray(counsellors));
+  }, []);
 
   // Reset page when filters change
   useEffect(() => {
@@ -44,12 +60,12 @@ export default function DebtCounsellors() {
 
   // Filter counsellors based on selection
   const filteredCounsellors = useMemo(() => {
-    return counsellors.filter(c => {
+    return shuffledCounsellors.filter(c => {
       if (selectedProvince && c.province !== selectedProvince) return false;
       if (selectedCity && c.city !== selectedCity) return false;
       return true;
     });
-  }, [selectedProvince, selectedCity]);
+  }, [selectedProvince, selectedCity, shuffledCounsellors]);
 
   // Pagination logic
   const totalPages = Math.ceil(filteredCounsellors.length / itemsPerPage);
@@ -124,7 +140,7 @@ export default function DebtCounsellors() {
 
       {/* Results */}
       <div className="container mt-12">
-        <GoogleAd slot="4455667788" className="mb-12" />
+        <GoogleAd slot="2722368811" className="mb-12" label="Advertisement" />
         
         <div className="flex justify-between items-center mb-8">
           <h2 className="text-2xl font-bold font-sans text-primary">
