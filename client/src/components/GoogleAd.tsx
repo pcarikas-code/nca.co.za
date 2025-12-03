@@ -24,14 +24,21 @@ export default function GoogleAd({ slot, format = "auto", className, label = "Ad
   }, []);
 
   return (
-    <div className={cn("w-full flex flex-col items-center justify-center my-8", className)}>
-      <div className="text-[10px] text-muted-foreground uppercase tracking-widest mb-1 self-start w-full text-center border-b border-border/50 pb-1">
+    <div className={cn("w-full my-8 text-center", className)}>
+      <div className="text-[10px] text-muted-foreground uppercase tracking-widest mb-2 border-b border-border/50 pb-1 inline-block w-full">
         {label}
       </div>
-      <div className="w-full min-h-[280px] md:min-h-[100px] flex items-center justify-center overflow-hidden bg-secondary/10 rounded-lg">
+      {/* 
+        CRITICAL FIX: 
+        1. Removed flexbox (flex, items-center, justify-center)
+        2. Removed overflow-hidden
+        3. Kept min-height to prevent layout shift
+        4. Used simple block display
+      */}
+      <div className="w-full min-h-[280px] md:min-h-[100px] bg-secondary/5 rounded-lg mx-auto">
         <ins 
           className="adsbygoogle"
-          style={{ display: 'block', width: '100%' }}
+          style={{ display: 'block', textAlign: 'center' }}
           data-ad-client="ca-pub-0236593486807878"
           data-ad-slot={slot}
           data-ad-format={format}
