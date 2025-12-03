@@ -11,6 +11,23 @@ export default function Home() {
       <SEOHead 
         title="Home" 
         description="The National Credit Adviser (NCA) promotes a fair and non-discriminatory marketplace for access to consumer credit in South Africa. Find debt counsellors and learn about your rights."
+        schema={{
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          "name": "National Credit Adviser",
+          "url": "https://nca.co.za",
+          "logo": "https://nca.co.za/images/logo.png",
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "contactType": "customer service",
+            "areaServed": "ZA",
+            "availableLanguage": "English"
+          },
+          "sameAs": [
+            "https://www.facebook.com/NationalCreditAdviser",
+            "https://twitter.com/NCA_ZA"
+          ]
+        }}
       />
       
       {/* Hero Section */}
@@ -70,7 +87,7 @@ export default function Home() {
       {/* Key Features / Value Prop */}
       <section className="py-20 bg-background">
         <div className="container">
-          <GoogleAd slot="1234567890" className="max-w-4xl mx-auto mb-12" />
+          <GoogleAd slot="4561337746" className="max-w-4xl mx-auto mb-12" label="Advertisement" />
           <div className="text-center max-w-3xl mx-auto mb-16">
             <h2 className="text-3xl md:text-4xl font-bold font-sans text-primary mb-4">How the NCA Protects You</h2>
             <p className="text-muted-foreground text-lg">The National Credit Act (NCA) was introduced to promote a fair and non-discriminatory marketplace for access to consumer credit.</p>
@@ -162,7 +179,7 @@ export default function Home() {
       <section className="py-24 bg-background relative">
         <div className="absolute inset-0 bg-[url('/images/news-bg.png')] bg-cover bg-center opacity-5"></div>
         <div className="container relative z-10">
-          <GoogleAd slot="0987654321" className="max-w-4xl mx-auto mb-12" />
+          <GoogleAd slot="2722368811" className="max-w-4xl mx-auto mb-12" label="Sponsored Content" />
           <div className="flex justify-between items-end mb-12">
             <div>
               <h2 className="text-3xl md:text-4xl font-bold font-sans text-primary mb-2">Latest News & Updates</h2>

@@ -6,6 +6,7 @@ interface SEOHeadProps {
   canonicalUrl?: string;
   ogImage?: string;
   type?: "website" | "article";
+  schema?: Record<string, any>;
 }
 
 export default function SEOHead({ 
@@ -13,7 +14,8 @@ export default function SEOHead({
   description, 
   canonicalUrl = "https://nca.co.za", 
   ogImage = "https://nca.co.za/images/hero-banner.png",
-  type = "website"
+  type = "website",
+  schema
 }: SEOHeadProps) {
   const fullTitle = `${title} | National Credit Adviser`;
   
@@ -47,6 +49,13 @@ export default function SEOHead({
       <meta name="geo.placename" content="South Africa" />
       <meta name="geo.position" content="-30.5595;22.9375" />
       <meta name="ICBM" content="-30.5595, 22.9375" />
+
+      {/* Schema.org Structured Data */}
+      {schema && (
+        <script type="application/ld+json">
+          {JSON.stringify(schema)}
+        </script>
+      )}
     </Helmet>
   );
 }

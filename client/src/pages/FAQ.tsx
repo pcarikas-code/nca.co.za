@@ -46,6 +46,18 @@ export default function FAQ() {
       <SEOHead 
         title="Frequently Asked Questions" 
         description="Get answers to common questions about the National Credit Act, debt review process, and consumer rights in South Africa."
+        schema={{
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": faqs.map(faq => ({
+            "@type": "Question",
+            "name": faq.question,
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": faq.answer
+            }
+          }))
+        }}
       />
       
       {/* Header */}
@@ -76,7 +88,7 @@ export default function FAQ() {
       <div className="container mt-16 grid md:grid-cols-12 gap-12">
         {/* Main FAQ List */}
         <div className="md:col-span-8 space-y-6">
-          <GoogleAd slot="2233445566" className="mb-6" />
+          <GoogleAd slot="2722368811" className="mb-6" label="Advertisement" />
           {faqs.map((faq, i) => (
             <Accordion type="single" collapsible key={i} className="bg-white border border-border rounded-xl px-6 shadow-sm hover:shadow-md transition-shadow">
               <AccordionItem value={`item-${i}`} className="border-none">

@@ -26,6 +26,19 @@ export default function NewsDetail() {
       <SEOHead 
         title={`${article.title} - National Credit Adviser`}
         description={`Read about ${article.title}. ${article.category} news and updates from the National Credit Adviser.`}
+        schema={{
+          "@context": "https://schema.org",
+          "@type": "NewsArticle",
+          "headline": article.title,
+          "image": article.image ? [`https://nca.co.za${article.image}`] : [],
+          "datePublished": new Date(article.date).toISOString(),
+          "dateModified": new Date(article.date).toISOString(),
+          "author": [{
+            "@type": "Organization",
+            "name": "National Credit Adviser",
+            "url": "https://nca.co.za"
+          }]
+        }}
       />
       
       <div className="min-h-screen bg-background pb-20">
@@ -113,7 +126,7 @@ export default function NewsDetail() {
             </div>
 
             <div className="mt-12">
-              <GoogleAd slot="article-bottom" format="auto" />
+              <GoogleAd slot="7370515675" format="auto" label="Sponsored" />
             </div>
           </div>
         </div>
