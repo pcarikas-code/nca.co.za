@@ -4,10 +4,22 @@ import { Input } from "@/components/ui/input";
 import { Search, HelpCircle } from "lucide-react";
 import GoogleAd from "@/components/GoogleAd";
 import SEOHead from "@/components/SEOHead";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { trackSearch } from "@/lib/analytics";
 
 export default function FAQ() {
   const [searchQuery, setSearchQuery] = useState("");
+
+  // Debounce search tracking
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      if (searchQuery.length > 2) {
+        trackSearch(searchQuery);
+      }
+    }, 1000); // Wait 1s after typing stops
+
+    return () => clearTimeout(timer);
+  }, [searchQuery]);
 
   const faqs = [
     {

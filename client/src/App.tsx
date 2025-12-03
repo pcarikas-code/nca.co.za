@@ -5,6 +5,8 @@ import { useHashLocation } from "wouter/use-hash-location";
 import ErrorBoundary from "./components/ErrorBoundary";
 import Layout from "./components/Layout";
 import { ThemeProvider } from "./contexts/ThemeContext";
+import { useEffect } from "react";
+import { initGA } from "@/lib/analytics";
 
 // Pages
 import Home from "./pages/Home";
@@ -34,6 +36,10 @@ function Router() {
 }
 
 function App() {
+  useEffect(() => {
+    initGA();
+  }, []);
+
   return (
     <ErrorBoundary>
       <ThemeProvider defaultTheme="light">
