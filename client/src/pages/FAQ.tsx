@@ -107,10 +107,9 @@ export default function FAQ() {
         </div>
       </div>
 
-      <div className="container mt-16 grid md:grid-cols-12 gap-12">
+      <div className="container mt-16 grid lg:grid-cols-12 gap-12">
         {/* Main FAQ List */}
-        <div className="md:col-span-8 space-y-6">
-          <GoogleAd slot="2722368811" className="mb-6" label="Advertisement" />
+        <div className="lg:col-span-8 space-y-6">
           {filteredFaqs.length === 0 ? (
             <div className="text-center py-12 bg-white rounded-xl border border-dashed">
               <p className="text-muted-foreground">No answers found matching "{searchQuery}"</p>
@@ -132,7 +131,23 @@ export default function FAQ() {
           )}
         </div>
 
-        {/* Sidebar Contact Removed */}
+        {/* Sidebar with Ad */}
+        <div className="lg:col-span-4 space-y-8">
+          <div className="sticky top-24">
+            <div className="bg-white p-6 rounded-xl border border-border shadow-sm">
+              <h3 className="font-bold text-lg mb-4 text-primary">Sponsored</h3>
+              <GoogleAd slot="2722368811" className="w-full" label="Advertisement" />
+            </div>
+            
+            <div className="mt-8 bg-secondary/50 p-6 rounded-xl border border-border/50">
+              <h3 className="font-bold text-lg mb-2 text-primary">Still have questions?</h3>
+              <p className="text-muted-foreground mb-4">Our registered debt counsellors are ready to assist you with personalized advice.</p>
+              <Button className="w-full bg-chart-1 hover:bg-chart-1/90 text-white" asChild>
+                <a href="/#/debt-counsellors">Find a Counsellor</a>
+              </Button>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
