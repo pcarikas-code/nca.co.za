@@ -28,7 +28,7 @@ export default function GoogleAd({ slot, format = "auto", className, label = "Ad
       <div className="text-[10px] text-muted-foreground uppercase tracking-widest mb-1 self-start w-full text-center border-b border-border/50 pb-1">
         {label}
       </div>
-      <div className="w-full min-h-[100px] flex items-center justify-center overflow-hidden">
+      <div className="w-full min-h-[280px] md:min-h-[100px] flex items-center justify-center overflow-hidden bg-secondary/10 rounded-lg">
         <ins 
           className="adsbygoogle"
           style={{ display: 'block', width: '100%' }}
