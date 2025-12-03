@@ -1,11 +1,14 @@
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Search, HelpCircle, MessageCircle } from "lucide-react";
+import { Search, HelpCircle } from "lucide-react";
 import GoogleAd from "@/components/GoogleAd";
 import SEOHead from "@/components/SEOHead";
+import { useState } from "react";
 
 export default function FAQ() {
+  const [searchQuery, setSearchQuery] = useState("");
+
   const faqs = [
     {
       question: "What is the National Credit Act?",
@@ -40,6 +43,11 @@ export default function FAQ() {
       answer: "If a credit provider rejects the proposed repayment plan, the Debt Counsellor can refer the matter to a Magistrate's Court to have the plan made an order of court, which binds the credit provider."
     }
   ];
+
+  const filteredFaqs = faqs.filter(faq => 
+    faq.question.toLowerCase().includes(searchQuery.toLowerCase()) || 
+    faq.answer.toLowerCase().includes(searchQuery.toLowerCase())
+  );
 
   return (
     <div className="min-h-screen bg-background pb-20">
@@ -79,6 +87,8 @@ export default function FAQ() {
               <Input 
                 placeholder="Search for answers..." 
                 className="pl-12 h-14 text-lg bg-white border-none shadow-lg rounded-xl"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
               />
             </div>
           </div>
@@ -89,18 +99,25 @@ export default function FAQ() {
         {/* Main FAQ List */}
         <div className="md:col-span-8 space-y-6">
           <GoogleAd slot="2722368811" className="mb-6" label="Advertisement" />
-          {faqs.map((faq, i) => (
-            <Accordion type="single" collapsible key={i} className="bg-white border border-border rounded-xl px-6 shadow-sm hover:shadow-md transition-shadow">
-              <AccordionItem value={`item-${i}`} className="border-none">
-                <AccordionTrigger className="font-sans font-bold text-lg text-primary hover:text-chart-1 hover:no-underline py-6 text-left">
-                  {faq.question}
-                </AccordionTrigger>
-                <AccordionContent className="text-muted-foreground text-base leading-relaxed pb-6">
-                  {faq.answer}
-                </AccordionContent>
-              </AccordionItem>
-            </Accordion>
-          ))}
+          {filteredFaqs.length === 0 ? (
+            <div className="text-center py-12 bg-white rounded-xl border border-dashed">
+              <p className="text-muted-foreground">No answers found matching "{searchQuery}"</p>
+              <Button variant="link" onClick={() => setSearchQuery("")} className="text-chart-1">Clear Search</Button>
+            </div>
+          ) : (
+            filteredFaqs.map((faq, i) => (
+              <Accordion type="single" collapsible key={i} className="bg-white border border-border rounded-xl px-6 shadow-sm hover:shadow-md transition-shadow">
+                <AccordionItem value={`item-${i}`} className="border-none">
+                  <AccordionTrigger className="font-sans font-bold text-lg text-primary hover:text-chart-1 hover:no-underline py-6 text-left">
+                    {faq.question}
+                  </AccordionTrigger>
+                  <AccordionContent className="text-muted-foreground text-base leading-relaxed pb-6">
+                    {faq.answer}
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
+            ))
+          )}
         </div>
 
         {/* Sidebar Contact Removed */}

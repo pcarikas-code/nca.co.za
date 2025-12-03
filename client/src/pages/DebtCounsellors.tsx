@@ -140,7 +140,7 @@ export default function DebtCounsellors() {
 
       {/* Results */}
       <div className="container mt-12">
-        <GoogleAd slot="2722368811" className="mb-12" label="Advertisement" />
+        <GoogleAd slot="2722368811" className="mb-12 mx-auto flex justify-center" label="Advertisement" />
         
         <div className="flex justify-between items-center mb-8">
           <h2 className="text-2xl font-bold font-sans text-primary">

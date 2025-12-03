@@ -62,7 +62,7 @@ export default function News() {
         {/* Masonry Grid */}
         <div className="columns-1 md:columns-2 lg:columns-3 gap-8 space-y-8">
           <div className="break-inside-avoid">
-            <GoogleAd slot="2722368811" format="rectangle" className="my-0" label="Advertisement" />
+            <GoogleAd slot="2722368811" format="rectangle" className="my-0 mx-auto flex justify-center" label="Advertisement" />
           </div>
           {newsItems.slice(1).map((item) => (
             <Link key={item.id} href={`/news/${item.id}`}>
