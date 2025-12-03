@@ -38,7 +38,7 @@ export default function GoogleAd({ slot, format = "auto", className, label = "Ad
       <div className="w-full min-h-[280px] md:min-h-[100px] bg-secondary/5 rounded-lg mx-auto">
         <ins 
           className="adsbygoogle"
-          style={{ display: 'block', textAlign: 'center' }}
+          style={{ display: 'block', textAlign: 'center', width: '100%' }}
           data-ad-client="ca-pub-0236593486807878"
           data-ad-slot={slot}
           data-ad-format={format}
