@@ -1,7 +1,7 @@
 import { useParams, Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Calendar, Clock, ArrowLeft, Share2, ExternalLink, ArrowRight } from "lucide-react";
+import { Calendar, Clock, ArrowLeft, Share2, ExternalLink, ArrowRight, Linkedin, Facebook } from "lucide-react";
 import GoogleAd from "@/components/GoogleAd";
 import SEOHead from "@/components/SEOHead";
 import newsData from "@/data/news.json";
@@ -114,11 +114,26 @@ export default function NewsDetail() {
                 </div>
                 <div className="flex gap-2">
                   <Button variant="outline" size="icon" onClick={() => {
-                    navigator.share({
-                      title: article.title,
-                      text: `Check out this article: ${article.title}`,
-                      url: window.location.href
-                    }).catch(() => {});
+                    window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(window.location.href)}`, '_blank');
+                  }}>
+                    <Linkedin className="h-4 w-4 text-[#0077b5]" />
+                  </Button>
+                  <Button variant="outline" size="icon" onClick={() => {
+                    window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(window.location.href)}`, '_blank');
+                  }}>
+                    <Facebook className="h-4 w-4 text-[#1877F2]" />
+                  </Button>
+                  <Button variant="outline" size="icon" onClick={() => {
+                    if (navigator.share) {
+                      navigator.share({
+                        title: article.title,
+                        text: `Check out this article: ${article.title}`,
+                        url: window.location.href
+                      }).catch(() => {});
+                    } else {
+                      navigator.clipboard.writeText(window.location.href);
+                      // Ideally show a toast here, but keeping it simple for now
+                    }
                   }}>
                     <Share2 className="h-4 w-4" />
                   </Button>

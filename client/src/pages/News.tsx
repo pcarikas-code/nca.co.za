@@ -1,7 +1,8 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Calendar, Clock, ArrowRight, Filter } from "lucide-react";
+import { Input } from "@/components/ui/input";
+import { Calendar, Clock, ArrowRight, Filter, Search } from "lucide-react";
 import { Link } from "wouter";
 import { useState, useMemo } from "react";
 import GoogleAd from "@/components/GoogleAd";
@@ -10,6 +11,7 @@ import newsData from "@/data/news.json";
 
 export default function News() {
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
+  const [searchQuery, setSearchQuery] = useState("");
 
   // Extract unique categories
   const categories = useMemo(() => {
@@ -20,11 +22,21 @@ export default function News() {
   // Filter and sort news
   const filteredNews = useMemo(() => {
     let news = [...newsData];
+    
     if (selectedCategory) {
       news = news.filter(item => item.category === selectedCategory);
     }
+
+    if (searchQuery) {
+      const query = searchQuery.toLowerCase();
+      news = news.filter(item => 
+        item.title.toLowerCase().includes(query) || 
+        item.excerpt.toLowerCase().includes(query)
+      );
+    }
+
     return news.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
-  }, [selectedCategory]);
+  }, [selectedCategory, searchQuery]);
 
   const featuredNews = filteredNews[0];
   const remainingNews = filteredNews.slice(1);
@@ -46,6 +58,17 @@ export default function News() {
       </div>
 
       <div className="container mt-12">
+        {/* Search and Filter */}
+        <div className="max-w-md mx-auto mb-8 relative">
+          <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+          <Input 
+            placeholder="Search news..." 
+            className="pl-10 bg-white"
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+          />
+        </div>
+
         {/* Category Filter */}
         <div className="flex flex-wrap gap-2 mb-12 justify-center">
           <Button 
