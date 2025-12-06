@@ -1,5 +1,29 @@
 [
   {
+    "id": 7,
+    "title": "Buy Now, Pay Later Grows as Debt Levels Hit Record Highs",
+    "date": "Dec 03, 2025",
+    "category": "Trends",
+    "readTime": "4 min read",
+    "excerpt": "DebtBusters' latest index reveals that consumers entering debt counselling are spending 70% of their income on debt service, driving a surge in 'Buy Now, Pay Later' usage.",
+    "content": "The latest DebtBusters Debt Index for the third quarter of 2025 paints a concerning picture of South African consumer health. The report indicates that consumers entering debt counselling are now spending, on average, 70 cents of every Rand they earn just to service their debt obligations.\n\nThis severe financial strain is driving a rapid expansion in the 'Buy Now, Pay Later' (BNPL) sector. While BNPL offers short-term liquidity, experts warn that it can easily lead to a debt spiral if not managed carefully. The National Credit Regulator is closely monitoring this sector to ensuring that these products do not bypass the affordability assessment requirements of the National Credit Act.",
+    "image": null,
+    "source": "Business Report",
+    "sourceUrl": "https://businessreport.co.za/"
+  },
+  {
+    "id": 8,
+    "title": "JIBAR Discontinuation to Impact South African Finance",
+    "date": "Dec 05, 2025",
+    "category": "Finance",
+    "readTime": "5 min read",
+    "excerpt": "The South African Reserve Bank has confirmed the discontinuation of JIBAR. This major shift will affect interest rate calculations for loans and mortgages across the country.",
+    "content": "On 3 December 2025, the South African Reserve Bank (SARB) confirmed that the Johannesburg Interbank Average Rate (JIBAR) will be discontinued. JIBAR has long been the benchmark interest rate used for determining the cost of borrowing in South Africa, influencing everything from corporate loans to home mortgages.\n\nThe transition to a new reference rate is expected to modernize the financial system and align South Africa with global standards. However, consumers and businesses with variable-rate loans linked to JIBAR should prepare for potential adjustments in how their interest is calculated in the coming months.",
+    "image": null,
+    "source": "Cliffe Dekker Hofmeyr",
+    "sourceUrl": "https://www.cliffedekkerhofmeyr.com/"
+  },
+  {
     "id": 1,
     "title": "Minister Withdraws NCA Amendment Regulations",
     "date": "Sep 12, 2025",
