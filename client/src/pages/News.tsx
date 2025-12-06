@@ -1,15 +1,33 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Calendar, Clock, ArrowRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Calendar, Clock, ArrowRight, Filter } from "lucide-react";
 import { Link } from "wouter";
+import { useState, useMemo } from "react";
 import GoogleAd from "@/components/GoogleAd";
 import SEOHead from "@/components/SEOHead";
 import newsData from "@/data/news.json";
 
 export default function News() {
-  const sortedNews = [...newsData].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
-  const featuredNews = sortedNews[0];
-  const remainingNews = sortedNews.slice(1);
+  const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
+
+  // Extract unique categories
+  const categories = useMemo(() => {
+    const cats = new Set(newsData.map(item => item.category));
+    return Array.from(cats).sort();
+  }, []);
+
+  // Filter and sort news
+  const filteredNews = useMemo(() => {
+    let news = [...newsData];
+    if (selectedCategory) {
+      news = news.filter(item => item.category === selectedCategory);
+    }
+    return news.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+  }, [selectedCategory]);
+
+  const featuredNews = filteredNews[0];
+  const remainingNews = filteredNews.slice(1);
 
   return (
     <div className="min-h-screen bg-secondary/30 pb-20">
@@ -28,7 +46,29 @@ export default function News() {
       </div>
 
       <div className="container mt-12">
+        {/* Category Filter */}
+        <div className="flex flex-wrap gap-2 mb-12 justify-center">
+          <Button 
+            variant={selectedCategory === null ? "default" : "outline"}
+            onClick={() => setSelectedCategory(null)}
+            className="rounded-full"
+          >
+            All News
+          </Button>
+          {categories.map(category => (
+            <Button
+              key={category}
+              variant={selectedCategory === category ? "default" : "outline"}
+              onClick={() => setSelectedCategory(category)}
+              className="rounded-full"
+            >
+              {category}
+            </Button>
+          ))}
+        </div>
+
         {/* Featured Article */}
+        {featuredNews && (
         <div className="mb-12">
           <Card className="overflow-hidden border-none shadow-xl bg-white grid md:grid-cols-2">
             <div className="relative h-64 md:h-auto">
@@ -60,6 +100,7 @@ export default function News() {
             </div>
           </Card>
         </div>
+        )}
 
         {/* Masonry Grid */}
         <div className="columns-1 md:columns-2 lg:columns-3 gap-8 space-y-8">

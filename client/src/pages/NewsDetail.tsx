@@ -1,6 +1,7 @@
 import { useParams, Link } from "wouter";
 import { Button } from "@/components/ui/button";
-import { Calendar, Clock, ArrowLeft, Share2, ExternalLink } from "lucide-react";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Calendar, Clock, ArrowLeft, Share2, ExternalLink, ArrowRight } from "lucide-react";
 import GoogleAd from "@/components/GoogleAd";
 import SEOHead from "@/components/SEOHead";
 import newsData from "@/data/news.json";
@@ -127,6 +128,42 @@ export default function NewsDetail() {
 
             <div className="mt-12">
               <GoogleAd slot="7370515675" format="auto" label="Sponsored" />
+            </div>
+
+            {/* Related Articles */}
+            <div className="mt-16">
+              <h3 className="text-2xl font-bold font-sans text-primary mb-6">Related Articles</h3>
+              <div className="grid md:grid-cols-2 gap-6">
+                {newsData
+                  .filter(item => item.category === article.category && item.id !== article.id)
+                  .slice(0, 2)
+                  .map(related => (
+                    <Link key={related.id} href={`/news/${related.id}`}>
+                      <Card className="h-full hover:shadow-lg transition-shadow cursor-pointer border-none shadow-md">
+                        <CardHeader>
+                          <div className="flex justify-between items-center mb-2">
+                            <span className="text-xs font-bold text-chart-1 uppercase">{related.category}</span>
+                            <span className="text-xs text-muted-foreground">{related.date}</span>
+                          </div>
+                          <CardTitle className="text-lg font-sans line-clamp-2 group-hover:text-chart-1">
+                            {related.title}
+                          </CardTitle>
+                        </CardHeader>
+                        <CardContent>
+                          <p className="text-sm text-muted-foreground line-clamp-2 mb-4">
+                            {related.excerpt}
+                          </p>
+                          <div className="flex items-center text-sm font-bold text-primary">
+                            Read Article <ArrowRight className="ml-1 h-3 w-3" />
+                          </div>
+                        </CardContent>
+                      </Card>
+                    </Link>
+                  ))}
+              </div>
+              {newsData.filter(item => item.category === article.category && item.id !== article.id).length === 0 && (
+                 <p className="text-muted-foreground italic">No related articles found at this time.</p>
+              )}
             </div>
           </div>
         </div>
