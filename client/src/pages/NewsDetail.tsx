@@ -10,6 +10,9 @@ export default function NewsDetail() {
   const params = useParams();
   const id = parseInt(params.id || "0");
   const article = newsData.find(a => a.id === id);
+  
+  // Construct production URL for sharing
+  const shareUrl = `https://nca.co.za/news/${id}`;
 
   if (!article) {
     return (
@@ -114,12 +117,12 @@ export default function NewsDetail() {
                 </div>
                 <div className="flex gap-2">
                   <Button variant="outline" size="icon" onClick={() => {
-                    window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(window.location.href)}`, '_blank');
+                    window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(shareUrl)}`, '_blank');
                   }}>
                     <Linkedin className="h-4 w-4 text-[#0077b5]" />
                   </Button>
                   <Button variant="outline" size="icon" onClick={() => {
-                    window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(window.location.href)}`, '_blank');
+                    window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareUrl)}`, '_blank');
                   }}>
                     <Facebook className="h-4 w-4 text-[#1877F2]" />
                   </Button>
@@ -128,10 +131,10 @@ export default function NewsDetail() {
                       navigator.share({
                         title: article.title,
                         text: `Check out this article: ${article.title}`,
-                        url: window.location.href
+                        url: shareUrl
                       }).catch(() => {});
                     } else {
-                      navigator.clipboard.writeText(window.location.href);
+                      navigator.clipboard.writeText(shareUrl);
                       // Ideally show a toast here, but keeping it simple for now
                     }
                   }}>
