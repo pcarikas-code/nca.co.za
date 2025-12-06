@@ -1,7 +1,7 @@
 import { useParams, Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Calendar, Clock, ArrowLeft, Share2, ExternalLink, ArrowRight, Linkedin, Facebook } from "lucide-react";
+import { Calendar, Clock, ArrowLeft, Share2, ExternalLink, ArrowRight, Linkedin, Facebook, Twitter } from "lucide-react";
 import GoogleAd from "@/components/GoogleAd";
 import SEOHead from "@/components/SEOHead";
 import newsData from "@/data/news.json";
@@ -125,6 +125,11 @@ export default function NewsDetail() {
                     window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareUrl)}`, '_blank');
                   }}>
                     <Facebook className="h-4 w-4 text-[#1877F2]" />
+                  </Button>
+                  <Button variant="outline" size="icon" onClick={() => {
+                    window.open(`https://twitter.com/intent/tweet?url=${encodeURIComponent(shareUrl)}&text=${encodeURIComponent(article.title)}`, '_blank');
+                  }}>
+                    <Twitter className="h-4 w-4 text-[#1DA1F2]" />
                   </Button>
                   <Button variant="outline" size="icon" onClick={() => {
                     if (navigator.share) {
