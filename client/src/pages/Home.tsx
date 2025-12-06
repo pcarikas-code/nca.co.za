@@ -4,6 +4,7 @@ import { ArrowRight, CheckCircle2, Scale, ShieldCheck, Users } from "lucide-reac
 import { Link } from "wouter";
 import GoogleAd from "@/components/GoogleAd";
 import SEOHead from "@/components/SEOHead";
+import newsData from "@/data/news.json";
 
 export default function Home() {
   return (
@@ -193,26 +194,10 @@ export default function Home() {
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
-            {[
-              {
-                id: 1,
-                title: "Minister Withdraws NCA Amendment Regulations",
-                date: "Sep 12, 2025",
-                excerpt: "The Minister of Trade, Industry and Competition has withdrawn the draft regulations which listed educational institutions as credit providers."
-              },
-              {
-                id: 2,
-                title: "Draft Amendments to Affordability Assessment",
-                date: "Aug 19, 2025",
-                excerpt: "New draft amendments aim to strengthen consumer protection by revising how affordability assessments are conducted by credit providers."
-              },
-              {
-                id: 3,
-                title: "Debt Counselling: A Lifeline for Millennials",
-                date: "Oct 07, 2025",
-                excerpt: "Recent indices reveal a stark financial reality for South African millennials, with debt counselling becoming a critical tool for financial recovery."
-              }
-            ].map((news, idx) => (
+            {newsData
+              .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+              .slice(0, 3)
+              .map((news, idx) => (
               <Link key={idx} href={`/news/${news.id}`}>
                 <Card className="group hover:border-chart-1/50 transition-colors cursor-pointer bg-white h-full">
                 <CardHeader>

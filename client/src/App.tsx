@@ -3,6 +3,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { Route, Switch, Router as WouterRouter } from "wouter";
 import { useHashLocation } from "wouter/use-hash-location";
 import ErrorBoundary from "./components/ErrorBoundary";
+import ScrollToTop from "./components/ScrollToTop";
 import Layout from "./components/Layout";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import { useEffect } from "react";
@@ -20,6 +21,7 @@ import NotFound from "./pages/NotFound";
 function Router() {
   return (
     <WouterRouter hook={useHashLocation}>
+      <ScrollToTop />
       <Layout>
         <Switch>
           <Route path="/" component={Home} />
