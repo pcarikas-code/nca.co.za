@@ -111,11 +111,18 @@ export default function NewsDetail() {
                 </div>
               )}
 
-              <div className="mt-10 pt-6 border-t border-border flex justify-between items-center">
-                <div className="text-sm font-medium text-muted-foreground">
-                  Share this article
-                </div>
-                <div className="flex gap-2">
+                  <div className="mt-10 pt-6 border-t border-border flex justify-between items-center">
+                    <div className="flex items-center gap-4">
+                      <div className="text-sm font-medium text-muted-foreground">
+                        Share this article
+                      </div>
+                      {article.shareCount && article.shareCount > 10 && (
+                        <div className="text-sm font-semibold text-primary bg-primary/10 px-2 py-0.5 rounded-full">
+                          {article.shareCount} Shares
+                        </div>
+                      )}
+                    </div>
+                    <div className="flex gap-2">
                   <Button variant="outline" size="icon" onClick={() => {
                     window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(shareUrl)}`, '_blank');
                   }}>

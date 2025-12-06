@@ -9,7 +9,8 @@
     "content": "The latest DebtBusters Debt Index for the third quarter of 2025 paints a concerning picture of South African consumer health. The report indicates that consumers entering debt counselling are now spending, on average, 70 cents of every Rand they earn just to service their debt obligations.\n\nThis severe financial strain is driving a rapid expansion in the 'Buy Now, Pay Later' (BNPL) sector. While BNPL offers short-term liquidity, experts warn that it can easily lead to a debt spiral if not managed carefully. The National Credit Regulator is closely monitoring this sector to ensuring that these products do not bypass the affordability assessment requirements of the National Credit Act.",
     "image": null,
     "source": "Business Report",
-    "sourceUrl": "https://businessreport.co.za/"
+    "sourceUrl": "https://businessreport.co.za/",
+    "shareCount": 45
   },
   {
     "id": 8,
@@ -21,7 +22,8 @@
     "content": "On 3 December 2025, the South African Reserve Bank (SARB) confirmed that the Johannesburg Interbank Average Rate (JIBAR) will be discontinued. JIBAR has long been the benchmark interest rate used for determining the cost of borrowing in South Africa, influencing everything from corporate loans to home mortgages.\n\nThe transition to a new reference rate is expected to modernize the financial system and align South Africa with global standards. However, consumers and businesses with variable-rate loans linked to JIBAR should prepare for potential adjustments in how their interest is calculated in the coming months.",
     "image": null,
     "source": "Cliffe Dekker Hofmeyr",
-    "sourceUrl": "https://www.cliffedekkerhofmeyr.com/"
+    "sourceUrl": "https://www.cliffedekkerhofmeyr.com/",
+    "shareCount": 12
   },
   {
     "id": 1,
@@ -33,7 +35,8 @@
     "content": "The Minister of Trade, Industry and Competition has officially withdrawn the draft regulations that proposed listing educational institutions as credit providers under the National Credit Act (NCA). This decision comes after significant pushback from the banking sector and educational bodies, who argued that such a classification would severely hamper student access to finance.\n\nThe withdrawal notice was published in the Government Gazette, effectively nullifying the previous proposal. Industry experts have welcomed the move, stating that it allows for a more nuanced approach to student debt that doesn't inadvertently cut off funding avenues for those seeking higher education.\n\nMoving forward, the Department has indicated it will engage in further consultations to find a balanced regulatory framework that protects consumers without stifling the education sector.",
     "image": "/images/news-bg.png",
     "source": "Government Gazette",
-    "sourceUrl": "https://www.gov.za/"
+    "sourceUrl": "https://www.gov.za/",
+    "shareCount": 8
   },
   {
     "id": 2,
@@ -45,7 +48,8 @@
     "content": "The National Credit Regulator (NCR) has released draft amendments to the affordability assessment regulations. These changes are designed to close loopholes that have allowed some credit providers to grant loans to consumers who cannot realistically afford them.\n\nKey proposals include:\n- Stricter requirements for verifying discretionary income.\n- Mandatory inclusion of all maintenance obligations in expense calculations.\n- A standardized 'minimum expense norm' table that credit providers must use as a baseline.\n\nThe public is invited to comment on these draft amendments until the end of October 2025.",
     "image": null,
     "source": "National Credit Regulator",
-    "sourceUrl": "https://www.ncr.org.za/"
+    "sourceUrl": "https://www.ncr.org.za/",
+    "shareCount": 156
   },
   {
     "id": 3,
@@ -57,7 +61,8 @@
     "content": "A recent consumer credit index report highlights a worrying trend: South African millennials are increasingly falling into over-indebtedness. The combination of high interest rates, stagnant wages, and rising cost of living has created a perfect storm for this demographic.\n\nHowever, the report also notes a positive shift in behavior—more young people are proactively seeking debt counselling earlier in the cycle. 'Debt counselling is no longer seen as a stigma, but as a strategic financial management tool,' says a leading debt counsellor. This proactive approach is helping many avoid asset repossession and legal action.",
     "image": "/images/debt-counselling.png",
     "source": "Debt Counsellors Association of South Africa",
-    "sourceUrl": "https://www.dcasa.co.za/"
+    "sourceUrl": "https://www.dcasa.co.za/",
+    "shareCount": 3
   },
   {
     "id": 4,
@@ -69,7 +74,8 @@
     "content": "The Banking Association South Africa (BASA) has expressed concern over the sudden withdrawal of certain NCA draft amendments, arguing that regulatory uncertainty is bad for business. Specifically, they point to the impact on Micro, Small, and Medium Enterprises (MSMEs), which rely on clear credit regulations to access funding.\n\nBASA urges the government to expedite the consultation process and provide a clear roadmap for future amendments to ensure stability in the financial sector.",
     "image": null,
     "source": "Banking Association South Africa",
-    "sourceUrl": "https://www.banking.org.za/"
+    "sourceUrl": "https://www.banking.org.za/",
+    "shareCount": 0
   },
   {
     "id": 5,
@@ -81,7 +87,8 @@
     "content": "In an effort to demystify the debt review process, ZeroDebt has launched a free online calculator. This tool allows consumers to input their current debt obligations and see an estimated repayment plan under debt review.\n\n'Many consumers are scared of debt review because they don't know what the numbers look like,' says the CEO of ZeroDebt. 'This calculator gives them a transparent view of the potential savings, often reducing monthly installments by up to 60%.'",
     "image": null,
     "source": "ZeroDebt Press Release",
-    "sourceUrl": "#"
+    "sourceUrl": "#",
+    "shareCount": 22
   },
   {
     "id": 6,
@@ -93,6 +100,7 @@
     "content": "Section 60 of the National Credit Act is a cornerstone of consumer rights in South Africa. It explicitly states that every adult has the right to apply for credit. While it doesn't guarantee that credit will be granted (as affordability checks are mandatory), it ensures that the *opportunity* to apply is open to all.\n\nCrucially, the section prohibits discrimination on the grounds of race, religion, pregnancy, marital status, or gender. If a consumer feels their application was rejected based on discriminatory reasons rather than financial affordability, they have the right to lodge a complaint with the National Credit Regulator.",
     "image": "/images/legal-act.png",
     "source": "National Credit Act",
-    "sourceUrl": "https://www.ncr.org.za/"
+    "sourceUrl": "https://www.ncr.org.za/",
+    "shareCount": 9
   }
 ]
