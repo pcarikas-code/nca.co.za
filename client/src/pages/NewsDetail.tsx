@@ -14,6 +14,17 @@ export default function NewsDetail() {
   // Construct production URL for sharing
   const shareUrl = `https://nca.co.za/news/${id}`;
 
+  const trackShare = (platform: string) => {
+    if (typeof window !== 'undefined' && (window as any).gtag) {
+      (window as any).gtag('event', 'share', {
+        method: platform,
+        content_type: 'news_article',
+        item_id: id.toString(),
+        item_name: article?.title
+      });
+    }
+  };
+
   if (!article) {
     return (
       <div className="container py-20 text-center">
@@ -30,11 +41,12 @@ export default function NewsDetail() {
       <SEOHead 
         title={`${article.title} - National Credit Adviser`}
         description={`Read about ${article.title}. ${article.category} news and updates from the National Credit Adviser.`}
+        ogImage={article.ogImage ? `https://nca.co.za${article.ogImage}` : undefined}
         schema={{
           "@context": "https://schema.org",
           "@type": "NewsArticle",
           "headline": article.title,
-          "image": article.image ? [`https://nca.co.za${article.image}`] : [],
+          "image": article.ogImage ? [`https://nca.co.za${article.ogImage}`] : (article.image ? [`https://nca.co.za${article.image}`] : []),
           "datePublished": new Date(article.date).toISOString(),
           "dateModified": new Date(article.date).toISOString(),
           "author": [{
@@ -124,21 +136,25 @@ export default function NewsDetail() {
                     </div>
                     <div className="flex gap-2">
                   <Button variant="outline" size="icon" onClick={() => {
+                    trackShare('linkedin');
                     window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(shareUrl)}`, '_blank');
                   }}>
                     <Linkedin className="h-4 w-4 text-[#0077b5]" />
                   </Button>
                   <Button variant="outline" size="icon" onClick={() => {
+                    trackShare('facebook');
                     window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareUrl)}`, '_blank');
                   }}>
                     <Facebook className="h-4 w-4 text-[#1877F2]" />
                   </Button>
                   <Button variant="outline" size="icon" onClick={() => {
+                    trackShare('twitter');
                     window.open(`https://twitter.com/intent/tweet?url=${encodeURIComponent(shareUrl)}&text=${encodeURIComponent(article.title)}`, '_blank');
                   }}>
                     <Twitter className="h-4 w-4 text-[#1DA1F2]" />
                   </Button>
                   <Button variant="outline" size="icon" onClick={() => {
+                    trackShare('native_or_copy');
                     if (navigator.share) {
                       navigator.share({
                         title: article.title,

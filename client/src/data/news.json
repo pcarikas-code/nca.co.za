@@ -10,7 +10,8 @@
     "image": null,
     "source": "Business Report",
     "sourceUrl": "https://businessreport.co.za/",
-    "shareCount": 45
+    "shareCount": 45,
+    "ogImage": "/images/og/og-news-7.png"
   },
   {
     "id": 8,
@@ -23,7 +24,8 @@
     "image": null,
     "source": "Cliffe Dekker Hofmeyr",
     "sourceUrl": "https://www.cliffedekkerhofmeyr.com/",
-    "shareCount": 12
+    "shareCount": 12,
+    "ogImage": "/images/og/og-news-8.png"
   },
   {
     "id": 1,
@@ -36,7 +38,8 @@
     "image": "/images/news-bg.png",
     "source": "Government Gazette",
     "sourceUrl": "https://www.gov.za/",
-    "shareCount": 8
+    "shareCount": 8,
+    "ogImage": "/images/og/og-news-1.png"
   },
   {
     "id": 2,
@@ -49,7 +52,8 @@
     "image": null,
     "source": "National Credit Regulator",
     "sourceUrl": "https://www.ncr.org.za/",
-    "shareCount": 156
+    "shareCount": 156,
+    "ogImage": "/images/og/og-news-2.png"
   },
   {
     "id": 3,
@@ -58,11 +62,12 @@
     "category": "Trends",
     "readTime": "5 min read",
     "excerpt": "Recent indices reveal a stark financial reality for South African millennials, with debt counselling becoming a critical tool for financial recovery. Rising living costs and high interest rates are driving younger consumers to seek professional help.",
-    "content": "A recent consumer credit index report highlights a worrying trend: South African millennials are increasingly falling into over-indebtedness. The combination of high interest rates, stagnant wages, and rising cost of living has created a perfect storm for this demographic.\n\nHowever, the report also notes a positive shift in behavior—more young people are proactively seeking debt counselling earlier in the cycle. 'Debt counselling is no longer seen as a stigma, but as a strategic financial management tool,' says a leading debt counsellor. This proactive approach is helping many avoid asset repossession and legal action.",
+    "content": "A recent consumer credit index report highlights a worrying trend: South African millennials are increasingly falling into over-indebtedness. The combination of high interest rates, stagnant wages, and rising cost of living has created a perfect storm for this demographic.\n\nHowever, the report also notes a positive shift in behavior\u2014more young people are proactively seeking debt counselling earlier in the cycle. 'Debt counselling is no longer seen as a stigma, but as a strategic financial management tool,' says a leading debt counsellor. This proactive approach is helping many avoid asset repossession and legal action.",
     "image": "/images/debt-counselling.png",
     "source": "Debt Counsellors Association of South Africa",
     "sourceUrl": "https://www.dcasa.co.za/",
-    "shareCount": 3
+    "shareCount": 3,
+    "ogImage": "/images/og/og-news-3.png"
   },
   {
     "id": 4,
@@ -75,7 +80,8 @@
     "image": null,
     "source": "Banking Association South Africa",
     "sourceUrl": "https://www.banking.org.za/",
-    "shareCount": 0
+    "shareCount": 0,
+    "ogImage": "/images/og/og-news-4.png"
   },
   {
     "id": 5,
@@ -88,7 +94,8 @@
     "image": null,
     "source": "ZeroDebt Press Release",
     "sourceUrl": "#",
-    "shareCount": 22
+    "shareCount": 22,
+    "ogImage": "/images/og/og-news-5.png"
   },
   {
     "id": 6,
@@ -101,6 +108,7 @@
     "image": "/images/legal-act.png",
     "source": "National Credit Act",
     "sourceUrl": "https://www.ncr.org.za/",
-    "shareCount": 9
+    "shareCount": 9,
+    "ogImage": "/images/og/og-news-6.png"
   }
 ]
