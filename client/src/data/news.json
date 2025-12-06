@@ -10,7 +10,7 @@
     "image": null,
     "source": "Business Report",
     "sourceUrl": "https://businessreport.co.za/",
-    "shareCount": 45,
+    "shareCount": 0,
     "ogImage": "/images/og/og-news-7.png"
   },
   {
@@ -24,7 +24,7 @@
     "image": null,
     "source": "Cliffe Dekker Hofmeyr",
     "sourceUrl": "https://www.cliffedekkerhofmeyr.com/",
-    "shareCount": 12,
+    "shareCount": 0,
     "ogImage": "/images/og/og-news-8.png"
   },
   {
@@ -38,7 +38,7 @@
     "image": "/images/news-bg.png",
     "source": "Government Gazette",
     "sourceUrl": "https://www.gov.za/",
-    "shareCount": 8,
+    "shareCount": 0,
     "ogImage": "/images/og/og-news-1.png"
   },
   {
@@ -52,7 +52,7 @@
     "image": null,
     "source": "National Credit Regulator",
     "sourceUrl": "https://www.ncr.org.za/",
-    "shareCount": 156,
+    "shareCount": 0,
     "ogImage": "/images/og/og-news-2.png"
   },
   {
@@ -66,7 +66,7 @@
     "image": "/images/debt-counselling.png",
     "source": "Debt Counsellors Association of South Africa",
     "sourceUrl": "https://www.dcasa.co.za/",
-    "shareCount": 3,
+    "shareCount": 0,
     "ogImage": "/images/og/og-news-3.png"
   },
   {
@@ -94,7 +94,7 @@
     "image": null,
     "source": "ZeroDebt Press Release",
     "sourceUrl": "#",
-    "shareCount": 22,
+    "shareCount": 0,
     "ogImage": "/images/og/og-news-5.png"
   },
   {
@@ -108,7 +108,7 @@
     "image": "/images/legal-act.png",
     "source": "National Credit Act",
     "sourceUrl": "https://www.ncr.org.za/",
-    "shareCount": 9,
+    "shareCount": 0,
     "ogImage": "/images/og/og-news-6.png"
   }
 ]

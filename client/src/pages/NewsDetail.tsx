@@ -1,4 +1,5 @@
 import { useParams, Link } from "wouter";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Calendar, Clock, ArrowLeft, Share2, ExternalLink, ArrowRight, Linkedin, Facebook, Twitter } from "lucide-react";
@@ -10,9 +11,43 @@ export default function NewsDetail() {
   const params = useParams();
   const id = parseInt(params.id || "0");
   const article = newsData.find(a => a.id === id);
+  const [shareCount, setShareCount] = useState<number>(0);
   
   // Construct production URL for sharing
   const shareUrl = `https://nca.co.za/news/${id}`;
+
+  useEffect(() => {
+    const fetchShareCount = async () => {
+      const apiKey = import.meta.env.VITE_SHAREDCOUNT_API_KEY;
+      if (!apiKey) return;
+
+      try {
+        const response = await fetch(`https://api.sharedcount.com/v1.0/?url=${encodeURIComponent(shareUrl)}&apikey=${apiKey}`);
+        if (response.ok) {
+          const data = await response.json();
+          // Sum up shares from different platforms if available, or just use total
+          // SharedCount v1.0 returns object with Facebook, Pinterest, etc.
+          // We'll focus on Facebook total_count + Pinterest + LinkedIn (if available in plan)
+          // For free tier, it's mostly Facebook and Pinterest.
+          
+          let total = 0;
+          if (data.Facebook) {
+             total += typeof data.Facebook === 'object' ? (data.Facebook.total_count || 0) : data.Facebook;
+          }
+          if (data.Pinterest) {
+            total += data.Pinterest;
+          }
+          // Add other platforms if returned by API
+          
+          setShareCount(total);
+        }
+      } catch (error) {
+        console.error("Failed to fetch share count:", error);
+      }
+    };
+
+    fetchShareCount();
+  }, [shareUrl]);
 
   const trackShare = (platform: string) => {
     if (typeof window !== 'undefined' && (window as any).gtag) {
@@ -128,9 +163,9 @@ export default function NewsDetail() {
                       <div className="text-sm font-medium text-muted-foreground">
                         Share this article
                       </div>
-                      {article.shareCount && article.shareCount > 10 && (
+                      {shareCount > 10 && (
                         <div className="text-sm font-semibold text-primary bg-primary/10 px-2 py-0.5 rounded-full">
-                          {article.shareCount} Shares
+                          {shareCount} Shares
                         </div>
                       )}
                     </div>
