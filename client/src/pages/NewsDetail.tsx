@@ -21,8 +21,28 @@ export default function NewsDetail() {
       const apiKey = import.meta.env.VITE_SHAREDCOUNT_API_KEY;
       if (!apiKey) return;
 
+      // Check cache first
+      const cacheKey = `shareCount_${shareUrl}`;
+      const cachedData = localStorage.getItem(cacheKey);
+      if (cachedData) {
+        const { count, timestamp } = JSON.parse(cachedData);
+        const now = Date.now();
+        // Cache for 2 hours (7200000 ms)
+        if (now - timestamp < 7200000) {
+          setShareCount(count);
+          return;
+        }
+      }
+
       try {
         const response = await fetch(`https://api.sharedcount.com/v1.0/?url=${encodeURIComponent(shareUrl)}&apikey=${apiKey}`);
+        
+        if (response.status === 403) {
+          // Rate limit exceeded or invalid key, fail gracefully by doing nothing (count remains 0)
+          console.warn("SharedCount API rate limit exceeded or invalid key.");
+          return;
+        }
+
         if (response.ok) {
           const data = await response.json();
           // Sum up shares from different platforms if available, or just use total
@@ -40,6 +60,12 @@ export default function NewsDetail() {
           // Add other platforms if returned by API
           
           setShareCount(total);
+
+          // Update cache
+          localStorage.setItem(cacheKey, JSON.stringify({
+            count: total,
+            timestamp: Date.now()
+          }));
         }
       } catch (error) {
         console.error("Failed to fetch share count:", error);
