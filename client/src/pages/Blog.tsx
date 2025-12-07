@@ -31,7 +31,8 @@ export default function Blog() {
       const query = searchQuery.toLowerCase();
       blog = blog.filter(item => 
         item.title.toLowerCase().includes(query) || 
-        item.excerpt.toLowerCase().includes(query)
+        item.excerpt.toLowerCase().includes(query) ||
+        item.content.toLowerCase().includes(query)
       );
     }
 
