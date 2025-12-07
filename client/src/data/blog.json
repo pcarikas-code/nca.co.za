@@ -1,0 +1,41 @@
+[
+  {
+    "id": 1,
+    "title": "5 Tips for Managing Debt in 2025",
+    "date": "Jan 15, 2025",
+    "category": "Financial Advice",
+    "readTime": "5 min read",
+    "excerpt": "Struggling with debt? Here are five practical strategies to help you regain control of your finances this year.",
+    "content": "Managing debt can feel overwhelming, but with the right strategy, you can take back control of your financial future. Here are five tips to help you manage your debt effectively in 2025:\n\n1. **Create a Budget:** The first step to financial freedom is knowing where your money goes. Track your income and expenses to identify areas where you can cut back.\n2. **Prioritize High-Interest Debt:** Focus on paying off debts with the highest interest rates first. This strategy, known as the avalanche method, saves you money in the long run.\n3. **Consolidate Your Debt:** If you have multiple debts, consider consolidating them into a single loan with a lower interest rate. This simplifies your payments and can reduce your monthly obligations.\n4. **Build an Emergency Fund:** Unexpected expenses can derail your debt repayment plan. Aim to save at least three to six months' worth of living expenses in an emergency fund.\n5. **Seek Professional Help:** If you're struggling to make ends meet, don't hesitate to seek help from a registered debt counsellor. They can help you negotiate with creditors and create a repayment plan that works for you.",
+    "image": "/images/blog-debt-management.png",
+    "author": "NCA Team",
+    "shareCount": 0,
+    "ogImage": "/images/og/og-blog-1.png"
+  },
+  {
+    "id": 2,
+    "title": "Understanding Credit Scores: A Beginner's Guide",
+    "date": "Feb 10, 2025",
+    "category": "Education",
+    "readTime": "6 min read",
+    "excerpt": "Your credit score is a key factor in your financial health. Learn what it is, how it's calculated, and how to improve it.",
+    "content": "Your credit score is more than just a number; it's a reflection of your financial reliability. Lenders use it to determine whether to approve your loan applications and what interest rate to charge you.\n\n**What is a Credit Score?**\nA credit score is a three-digit number that predicts how likely you are to repay a loan on time. Scores typically range from 300 to 850, with higher scores indicating better creditworthiness.\n\n**How is it Calculated?**\nSeveral factors influence your credit score, including:\n- **Payment History:** Do you pay your bills on time?\n- **Credit Utilization:** How much of your available credit are you using?\n- **Length of Credit History:** How long have you had credit accounts?\n- **New Credit:** Have you opened several new accounts recently?\n- **Credit Mix:** Do you have a mix of credit types, such as credit cards, installment loans, and mortgages?\n\n**How to Improve Your Score**\nImproving your credit score takes time, but it's possible. Start by paying your bills on time, reducing your debt, and avoiding opening too many new accounts at once.",
+    "image": "/images/blog-credit-score.png",
+    "author": "NCA Team",
+    "shareCount": 0,
+    "ogImage": "/images/og/og-blog-2.png"
+  },
+  {
+    "id": 3,
+    "title": "The Benefits of Debt Review Explained",
+    "date": "Mar 05, 2025",
+    "category": "Debt Review",
+    "readTime": "4 min read",
+    "excerpt": "Debt review can offer a lifeline to over-indebted consumers. Discover the benefits and how it can protect your assets.",
+    "content": "Debt review is a legal process designed to help over-indebted consumers restructure their debt obligations. It offers several key benefits:\n\n- **Legal Protection:** Once you apply for debt review, your credit providers cannot take legal action against you for the debts under review.\n- **Reduced Monthly Payments:** A debt counsellor will negotiate with your creditors to reduce your monthly installments and extend your repayment terms.\n- **Lower Interest Rates:** In many cases, interest rates can be reduced, making your debt more affordable.\n- **Asset Protection:** Debt review can help protect your assets, such as your home and car, from repossession.\n\nIf you're struggling to keep up with your debt payments, debt review could be the solution you need to regain financial stability.",
+    "image": "/images/blog-debt-review.png",
+    "author": "NCA Team",
+    "shareCount": 0,
+    "ogImage": "/images/og/og-blog-3.png"
+  }
+]

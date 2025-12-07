@@ -14,6 +14,8 @@ import Home from "./pages/Home";
 import TheAct from "./pages/TheAct";
 import News from "./pages/News";
 import NewsDetail from "./pages/NewsDetail";
+import Blog from "./pages/Blog";
+import BlogDetail from "./pages/BlogDetail";
 import DebtCounsellors from "./pages/DebtCounsellors";
 import FAQ from "./pages/FAQ";
 import NotFound from "./pages/NotFound";
@@ -28,6 +30,8 @@ function Router() {
             <Route path="/the-act" component={TheAct} />
             <Route path="/news" component={News} />
             <Route path="/news/:id" component={NewsDetail} />
+            <Route path="/blog" component={Blog} />
+            <Route path="/blog/:id" component={BlogDetail} />
             <Route path="/debt-counsellors" component={DebtCounsellors} />
           <Route path="/faq" component={FAQ} />
           <Route component={NotFound} />

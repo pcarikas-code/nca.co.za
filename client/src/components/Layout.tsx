@@ -13,6 +13,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     { label: "Home", path: "/" },
     { label: "The Act", path: "/the-act" },
     { label: "News", path: "/news" },
+    { label: "Blog", path: "/blog" },
     { label: "Debt Counsellors", path: "/debt-counsellors" },
     { label: "FAQ", path: "/faq" },
   ];
@@ -114,6 +115,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               <li><Link href="/the-act"><span className="hover:text-chart-2 cursor-pointer transition-colors">The National Credit Act</span></Link></li>
               <li><Link href="/debt-counsellors"><span className="hover:text-chart-2 cursor-pointer transition-colors">Find a Debt Counsellor</span></Link></li>
               <li><Link href="/news"><span className="hover:text-chart-2 cursor-pointer transition-colors">Latest News</span></Link></li>
+              <li><Link href="/blog"><span className="hover:text-chart-2 cursor-pointer transition-colors">Blog</span></Link></li>
               <li><Link href="/faq"><span className="hover:text-chart-2 cursor-pointer transition-colors">Frequently Asked Questions</span></Link></li>
             </ul>
           </div>
