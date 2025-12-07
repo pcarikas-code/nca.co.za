@@ -33,7 +33,7 @@ export default function Home() {
       
       {/* Hero Section */}
       <section className="relative bg-secondary overflow-hidden">
-        <div className="absolute inset-0 bg-[url('/images/hero-banner.png')] bg-cover bg-center opacity-20 mix-blend-multiply"></div>
+        <div className="absolute inset-0 bg-[url('/images/hero-banner.webp')] bg-cover bg-center opacity-20 mix-blend-multiply"></div>
         <div className="absolute inset-0 bg-gradient-to-r from-background via-background/90 to-transparent"></div>
         
         <div className="container relative z-10 py-24 md:py-32 grid md:grid-cols-2 gap-12 items-center">
@@ -66,9 +66,12 @@ export default function Home() {
           <div className="relative hidden md:block animate-in slide-in-from-right duration-1000 delay-200">
             <div className="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-white rotate-2 hover:rotate-0 transition-transform duration-500">
                <img 
-                src="/images/hero-banner.png" 
+                src="/images/hero-banner.webp" 
                 alt="Group of diverse South African professionals standing in a modern office" 
                 className="w-full h-auto object-cover"
+                fetchPriority="high"
+                width="800"
+                height="600"
               />
             </div>
             {/* Floating Badge */}
@@ -141,9 +144,12 @@ export default function Home() {
         <div className="grid md:grid-cols-2 min-h-[600px]">
           <div className="relative h-full min-h-[400px]">
             <img 
-              src="/images/debt-counselling.png" 
+              src="/images/debt-counselling.webp" 
               alt="Professional debt counsellor consulting with a client in an office" 
               className="absolute inset-0 w-full h-full object-cover"
+              loading="lazy"
+              width="800"
+              height="600"
             />
             <div className="absolute inset-0 bg-primary/20 mix-blend-multiply"></div>
           </div>
@@ -178,7 +184,7 @@ export default function Home() {
 
       {/* Latest News Preview */}
       <section className="py-24 bg-background relative">
-        <div className="absolute inset-0 bg-[url('/images/news-bg.png')] bg-cover bg-center opacity-5"></div>
+        <div className="absolute inset-0 bg-[url('/images/news-bg.webp')] bg-cover bg-center opacity-5"></div>
         <div className="container relative z-10">
           <GoogleAd slot="2722368811" className="max-w-4xl mx-auto mb-12" label="Sponsored Content" />
           <div className="flex justify-between items-end mb-12">

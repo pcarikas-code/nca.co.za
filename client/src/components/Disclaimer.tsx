@@ -9,7 +9,7 @@ export default function Disclaimer() {
             <AlertTriangle className="h-8 w-8" />
           </div>
           <div className="space-y-4 text-sm text-muted-foreground">
-            <h4 className="font-bold text-primary text-base">Legal Disclaimer</h4>
+            <h2 className="font-bold text-primary text-base">Legal Disclaimer</h2>
             <p>
               The information provided on this website is for general informational purposes only and does not constitute legal, financial, or professional advice. While we strive to keep the information up to date and correct, we make no representations or warranties of any kind, express or implied, about the completeness, accuracy, reliability, suitability, or availability with respect to the website or the information, products, services, or related graphics contained on the website for any purpose.
             </p>
