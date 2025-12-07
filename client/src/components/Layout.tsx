@@ -112,7 +112,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           </div>
 
           <div>
-            <h3 className="font-sans font-bold text-lg mb-4 text-chart-2">Quick Links</h3>
+            <h2 className="font-sans font-bold text-lg mb-4 text-chart-2">Quick Links</h2>
             <ul className="space-y-2 text-sm">
               <li><Link href="/the-act"><span className="hover:text-chart-2 cursor-pointer transition-colors">The National Credit Act</span></Link></li>
               <li><Link href="/debt-counsellors"><span className="hover:text-chart-2 cursor-pointer transition-colors">Find a Debt Counsellor</span></Link></li>

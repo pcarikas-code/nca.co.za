@@ -76,7 +76,7 @@
   --secondary-foreground: oklch(0.25 0.02 280);
   
   --muted: oklch(0.96 0.01 85);
-  --muted-foreground: oklch(0.50 0.02 280);
+  --muted-foreground: oklch(0.45 0.02 280);
   
   /* Accent: Protea Pink/Red for highlights */
   --accent: oklch(0.95 0.03 85);
@@ -118,7 +118,7 @@
   --secondary-foreground: oklch(0.90 0.02 85);
   
   --muted: oklch(0.25 0.02 280);
-  --muted-foreground: oklch(0.70 0.02 280);
+  --muted-foreground: oklch(0.75 0.02 280);
   
   --accent: oklch(0.25 0.02 280);
   --accent-foreground: oklch(0.90 0.02 85);
