@@ -13,8 +13,8 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     { label: "Home", path: "/" },
     { label: "The Act", path: "/the-act" },
     { label: "News", path: "/news" },
-    { label: "Blog", path: "/blog" },
     { label: "Debt Counsellors", path: "/debt-counsellors" },
+    { label: "Blog", path: "/blog" },
     { label: "FAQ", path: "/faq" },
   ];
 
