@@ -4,6 +4,7 @@ import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import Disclaimer from "@/components/Disclaimer";
+import Breadcrumbs from "@/components/Breadcrumbs";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   const [location] = useLocation();
@@ -94,6 +95,12 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 
       {/* Main Content */}
       <main className="flex-1">
+        {/* Breadcrumbs Container - Only show if not on home page */}
+        {location !== "/" && (
+          <div className="container pt-6 pb-2">
+            <Breadcrumbs />
+          </div>
+        )}
         {children}
       </main>
 
