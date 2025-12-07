@@ -27,7 +27,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         <div className="container flex h-20 items-center justify-between">
           <Link href="/">
             <div className="flex items-center gap-3 cursor-pointer">
-              <img src="/images/logo.png" alt="NCA Logo" className="h-12 w-auto object-contain" />
+              <img src="/images/logo.png" alt="National Credit Adviser Logo" className="h-12 w-auto object-contain" />
               <div className="flex flex-col">
                 <span className="font-sans font-bold text-lg leading-none text-primary">National Credit</span>
                 <span className="font-sans text-sm text-muted-foreground leading-none">Adviser</span>
@@ -60,6 +60,8 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           <button
             className="md:hidden p-2"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
+            aria-expanded={isMobileMenuOpen}
           >
             {isMobileMenuOpen ? <X /> : <Menu />}
           </button>
@@ -101,7 +103,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         <div className="container grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="space-y-4">
             <div className="flex items-center gap-3">
-              <img src="/images/logo.png" alt="NCA Logo" className="h-10 w-auto object-contain bg-white/90 rounded-sm p-0.5" />
+              <img src="/images/logo.png" alt="National Credit Adviser Logo" className="h-10 w-auto object-contain bg-white/90 rounded-sm p-0.5" />
               <span className="font-sans font-bold text-lg">National Credit Adviser</span>
             </div>
             <p className="text-sm text-primary-foreground/80 leading-relaxed">

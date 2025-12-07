@@ -67,7 +67,7 @@ export default function Home() {
             <div className="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-white rotate-2 hover:rotate-0 transition-transform duration-500">
                <img 
                 src="/images/hero-banner.png" 
-                alt="South African Professionals" 
+                alt="Group of diverse South African professionals standing in a modern office" 
                 className="w-full h-auto object-cover"
               />
             </div>
@@ -142,7 +142,7 @@ export default function Home() {
           <div className="relative h-full min-h-[400px]">
             <img 
               src="/images/debt-counselling.png" 
-              alt="Debt Counselling Session" 
+              alt="Professional debt counsellor consulting with a client in an office" 
               className="absolute inset-0 w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-primary/20 mix-blend-multiply"></div>
